@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simusco.psychology.app.user.mapper.SignUpMapper">
+
+	<insert id="saveUser" parameterType="com.simusco.psychology.common.po.User"
+		statementType="PREPARED">
+		<![CDATA[
+			insert into sys_user(
+				user_id,
+				login_id,
+				enable,
+				password,
+				name,
+				last_login_time,
+				icon,
+				introduce,
+				tags,
+				role_id,
+				salt,
+				create_time,
+				update_time
+			)
+			values(
+				#{userId},
+				#{loginId},
+				#{enable},
+				#{password},
+				#{name},
+				#{lastLoginTime},
+				#{icon},
+				#{introduce},
+				#{tags},
+				#{roleId},
+				#{salt},
+				#{createTime},
+				#{updateTime}
+			)
+		]]>
+	</insert>
+	
+</mapper>
