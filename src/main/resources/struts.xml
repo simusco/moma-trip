@@ -28,6 +28,6 @@
         </action>
     </package>
 
-    <include file="com/moma/trip/user/signup-action.xml"/>
+    <include file="com/moma/trip/activity/activity-action.xml"/>
     
 </struts>

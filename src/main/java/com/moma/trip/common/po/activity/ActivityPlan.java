@@ -22,6 +22,7 @@ public class ActivityPlan implements Serializable {
 	private String departure;
 	private Timestamp createTime;
 	private Integer sort;
+	private String imageId;
 	
 	private List<ImageType> imageTypeList = new ArrayList<ImageType>();
 	private List<ActivityTag> activityTagList = new ArrayList<ActivityTag>();

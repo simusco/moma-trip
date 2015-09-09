@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.moma.trip.common.po.activity.Tags;
+
 public class Pagination implements Serializable{
 
 	/**
@@ -88,6 +90,10 @@ public class Pagination implements Serializable{
 		p.put("to", to);
 		
 		return p;
+	}
+
+	public void put(String key, Object object) {
+		params.put(key, object);
 	}
 	
 }
