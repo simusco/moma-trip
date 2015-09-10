@@ -9,6 +9,10 @@
 			<result name="success">/views/activity/tags.jsp</result>
 		</action>
 		
+		<action name="index" method="tags" class="trip.tagsAction">
+			<result name="success">/views/activity/index.jsp</result>
+		</action>
+		
 		<action name="query" method="query" class="trip.activityPlanAction">
 			<result name="success">/views/activity/list.jsp</result>
 		</action>
