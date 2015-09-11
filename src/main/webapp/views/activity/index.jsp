@@ -15,8 +15,10 @@
     <link type="text/css" href="<%=request.getContextPath()  %>/css/reset.css" rel="stylesheet"/>
     <link type="text/css" href="<%=request.getContextPath()  %>/css/index.css" rel="stylesheet"/>
     
+    <style type="text/css">
+    </style>
+    
     <script src="<%=request.getContextPath()  %>/public/jquery/jquery.min.js"></script>
-
 	<script type="text/javascript">
 		function vf(){
 			
@@ -83,6 +85,10 @@
 				
 				$(this).click(function(){
 					$('#switch_display_screen').attr('src', $(this).attr('ad-img-url'));
+					$('.switch_btn li').each(function(){
+						$(this).css('background-color','#ffffff');
+					});
+					$(this).css('background-color','#fb8300');
 				});
 			});
 			
@@ -169,9 +175,9 @@
 
     <div class="ui_mc_content">
         <ul class="recommend">
-            <li><img src="<%=request.getContextPath()  %>/images/ad_01.png"></li>
-            <li><img src="<%=request.getContextPath()  %>/images/ad_01.png"></li>
-            <li><img src="<%=request.getContextPath()  %>/images/ad_01.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_03.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_02.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_04.jpg"></li>
         </ul>
         <div class="tags">
             <div class="title">
@@ -231,7 +237,7 @@
                     	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
                         <span>
                         	<b>专业服务</b>
-                        	公司所有的服务人员都是有旅游专业背景
+                        	请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。
                         </span>
                     </p>
                 </div>

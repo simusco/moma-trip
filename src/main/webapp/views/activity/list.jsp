@@ -13,17 +13,17 @@ $(function(){
 		ap.mouseover(function(){
 			$(this).css({
 				'border':'1px solid #f07600',
-				'-webkit-box-shadow':'0 0 10px rgba(0, 204, 204, .5)',
+				/*'-webkit-box-shadow':'0 0 10px rgba(0, 204, 204, .5)',
 				'-moz-box-shadow':'0 0 10px rgba(0, 204, 204, .5)',
-				'box-shadow':'0 0 10px rgba(0, 204, 204, .5)'
+				'box-shadow':'0 0 10px rgba(0, 204, 204, .5)'*/
 			});
 		});
 		ap.mouseout(function(){
 			$(this).css({
-				'border':'',
+				'border':''/*,
 				'-webkit-box-shadow':'',
 				'-moz-box-shadow':'',
-				'box-shadow':''
+				'box-shadow':''*/
 			});
 		});
 	});
