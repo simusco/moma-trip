@@ -39,6 +39,13 @@
 				
 				//$('body').append(form);
 				return form.serialize();
+			},
+			activeSelect:function(o){
+				o.parent().find('> li').each(function(){
+					$(this).attr('active', 'false');
+				});
+				
+				o.attr('active','true');
 			}
 		});
 		
@@ -47,6 +54,8 @@
 			
 			$('.activity_plan_btn').each(function(){
 				$(this).on('click', function(){
+					$.activeSelect($(this));
+					
 					var tags = getCheckValues();
 					var tagsSerial = $.serializeForTags(tags);
 					
@@ -132,7 +141,7 @@
             	<c:forEach items="${webResult.object }" var="tagMap" varStatus="vs">
 	                <div class="tag_row">
 	                    <span>
-	                        <img src="<%=request.getContextPath()  %>/images/tag_icon.png">${tagMap.key.tag }：
+	                        <img src="${tagMap.key.icon }">${tagMap.key.tag }：
 	                    </span>
 	                    <ul class="tag_items">
 	                    	<c:forEach items="${tagMap.value}" var="tag">
@@ -147,14 +156,6 @@
 	                    </ul>
 	                </div>
 	            </c:forEach>
-                <div class="tag_row">
-                    <span>
-                        <<%=request.getContextPath()  %>/images/>排列方式：
-                    </span>
-                    <ul class="tag_items">
-                        <li active="true"><a>默认</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div class="active_plan_content">

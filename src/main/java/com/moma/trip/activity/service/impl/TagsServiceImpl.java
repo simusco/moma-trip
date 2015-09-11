@@ -35,7 +35,7 @@ public class TagsServiceImpl implements TagsService {
 				mapTags.put(tag, new ArrayList<Tags>());
 			}
 			
-			if("ALL".equals(tag.getValue())){
+			if("true".equals(tag.getValue())){
 				tag.setActive(true);
 			}
 		}

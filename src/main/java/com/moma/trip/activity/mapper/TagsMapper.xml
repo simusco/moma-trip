@@ -22,7 +22,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				t.description as description,
 				t.parent_id as parentId,
 				t.sort as sort,
-				t.value as value
+				t.value as value,
+				t.icon as icon,
+				t.active as active
 			from mc_tags t 
 			order by parent_id, sort
 		]]>

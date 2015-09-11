@@ -16,6 +16,7 @@ public class Tags implements Serializable, Comparable<Tags> {
 	private String sort;
 	private String value;
 	private boolean active = false;
+	private String icon;
 
 	public Tags getParent() {
 		return parent;
@@ -79,6 +80,14 @@ public class Tags implements Serializable, Comparable<Tags> {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 	@Override
