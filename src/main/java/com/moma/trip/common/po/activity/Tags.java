@@ -13,6 +13,7 @@ public class Tags implements Serializable, Comparable<Tags> {
 	private String description;
 	private Tags parent;
 	private String parentId;
+	private String pName;
 	private String sort;
 	private String value;
 	private boolean active = false;
@@ -90,6 +91,14 @@ public class Tags implements Serializable, Comparable<Tags> {
 		this.icon = icon;
 	}
 
+	public String getpName() {
+		return pName;
+	}
+
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -117,6 +126,13 @@ public class Tags implements Serializable, Comparable<Tags> {
 
 	public int compareTo(Tags o) {
 		return this.getTagId().compareTo(o.getTagId());
+	}
+
+	@Override
+	public String toString() {
+		return "Tags [tagId=" + tagId + ", tag=" + tag + ", description=" + description + ", parent=" + parent
+				+ ", parentId=" + parentId + ", sort=" + sort + ", value=" + value + ", active=" + active + ", icon="
+				+ icon + "]";
 	}
 
 }

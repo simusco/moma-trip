@@ -1,5 +1,6 @@
 package com.moma.trip.activity.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.moma.framework.pagination.Pagination;
@@ -18,10 +19,29 @@ public class ActivityPlanAction extends BaseSupportAction {
 
 	private List<Tags> tags = null;
 	private Pagination activityPlanList = null;
+	private int currPage;
 
 	public String query() {
 		Pagination pagination = new Pagination();
-		pagination.put("tags", tags);
+		
+		//保存临时需要查询的标签
+		List<String> tagNames = new ArrayList<String>();
+		if(tags != null){
+			for(int i=0;i<tags.size();i++){
+				Tags tag = tags.get(i);
+				
+				if("QUERY".equals(tag.getValue())){
+					tagNames.add(tag.getTag());
+				}
+			}
+		}
+		
+		//清空tags 为 mybatis == null 
+		if(tagNames == null || tagNames.size() == 0)
+			tagNames = null;
+		
+		pagination.put("tags", tagNames);
+		pagination.setCurrPage(currPage);
 		
 		activityPlanList = activityPlanService.getActivityPlanPageList(pagination);
 		return SUCCESS;
@@ -50,5 +70,14 @@ public class ActivityPlanAction extends BaseSupportAction {
 	public void setActivityPlanList(Pagination activityPlanList) {
 		this.activityPlanList = activityPlanList;
 	}
+
+	public int getCurrPage() {
+		return currPage;
+	}
+
+	public void setCurrPage(int currPage) {
+		this.currPage = currPage;
+	}
+
 
 }

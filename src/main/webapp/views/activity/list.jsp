@@ -2,71 +2,92 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 
+<script type="text/javascript">
+<!--
 
+$(function(){
+	$('.active_plan').each(function(){
+		var ap = $(this);
+		ap.mouseover(function(){
+			$(this).css({
+				'border':'1px solid #f07600',
+				'-webkit-box-shadow':'0 0 10px rgba(0, 204, 204, .5)',
+				'-moz-box-shadow':'0 0 10px rgba(0, 204, 204, .5)',
+				'box-shadow':'0 0 10px rgba(0, 204, 204, .5)'
+			});
+		});
+		ap.mouseout(function(){
+			$(this).css({
+				'border':'',
+				'-webkit-box-shadow':'',
+				'-moz-box-shadow':'',
+				'box-shadow':''
+			});
+		});
+	});
+});
+
+//-->
+</script>
+
+<c:forEach items="${activityPlanList.list }" var="activityPlan">
 	<div class="active_plan">
-		<img src="<%=request.getContextPath()  %>/images/adss.jpg">
+		<img src="<%=request.getContextPath()  %>/${activityPlan.imageURL}">
 		<div class="desc">
-		    <h1><b>【寻.向心】</b>“淘”回童年 北京爨底下古民居怀旧一日</h1>
-		    <h2>忘记城市喧嚣，与T.A撒欢闲游醉美坝上。</h2>
+		    <h1><c:out value="${activityPlan.name }" escapeXml="false"/></h1>
+		    <h2>${activityPlan.description }</h2>
 		    <div class="desc_table">
-		        <div class="tag_row">
-		            <span>适合团队：</span>
-		            <ul class="tag_items">
-		                <li>各类团队</li>
-		            </ul>
-		        </div>
-		        <div class="tag_row">
-		            <span>团队目的：</span>
-		            <ul class="tag_items">
-		                <li>休闲放松</li>
-		                <li>增强协作</li>
-		                <li>团队沟通</li>
-		            </ul>
-		        </div>
-		        <div class="tag_row">
-		            <span>主题特色：</span>
-		            <ul class="tag_items">
-		                <li>各类团队</li>
-		            </ul>
-		        </div>
+		    	
+		    	<c:forEach items="${activityPlan.tags }" var="tagMap" varStatus="vs">
+		    		<div class="tag_row">
+			            <span>${tagMap.key.tag }：</span>
+			            <ul class="tag_items">
+			            	<c:forEach items="${tagMap.value}" var="tag">
+			                <li>${tag.tag }</li>
+			                </c:forEach>
+			            </ul>
+			        </div>
+	            </c:forEach>
+	            
 		        <hr class="divider"/>
-		        <div class="tag_row">
-		            <span>线路编号：</span>
-		            <ul class="tag_items">
-		                <li>XXXXXX</li>
-		            </ul>
-		        </div>
 		        <div class="tag_row">
 		            <span>出发地：</span>
 		            <ul class="tag_items">
-		                <li><span class="ui_mc_value">深圳</span></li>
+		                <li><c:out value="${activityPlan.departure }" escapeXml="false"/></li>
 		            </ul>
 		        </div>
 		        <div class="tag_row">
 		            <span>目的地：</span>
 		            <ul class="tag_items">
-		                <li><span class="ui_mc_value">成都</span></li>
+		                <li><c:out value="${activityPlan.destination }" escapeXml="false"/></li>
 		            </ul>
 		        </div>
 		        <div class="tag_row">
 		            <span>往返交通：</span>
 		            <ul class="tag_items">
-		                <li><span class="ui_mc_value">巴士</span></li>
+		                <li><c:out value="${activityPlan.traffic }" escapeXml="false"/></li>
 		            </ul>
 		        </div>
 		        <div class="tag_row">
 		            <span>最低团建人数：</span>
 		            <ul class="tag_items">
-		                <li><span class="ui_mc_value">14</span>人</li>
+		                <li><c:out value="${activityPlan.minPepoleNum }" escapeXml="false"/></li>
 		            </ul>
 		        </div>
 		        <div class="tag_row">
 		            <span>提前报名：</span>
 		            <ul class="tag_items">
-		                <li>提前<span class="ui_mc_value">20</span>天报名</li>
+		                <li><c:out value="${activityPlan.preRegDay }" escapeXml="false"/></li>
 		            </ul>
 		        </div>
 		    </div>
 		</div>
 	</div>
+</c:forEach>
+<tags:pager
+	pagerRange="6" 
+   	pageSize="15" 
+   	totalPage="${activityPlanList.totalPage }" 
+   	curIndex="${activityPlanList.currPage}"/>

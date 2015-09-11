@@ -85,8 +85,9 @@ a, a:hover, a:active {
 	float: left;
 	height: 15px;
 	width: 15px;
-	background-color: #f07600;
+	background-color: #ffffff;
 	margin: 0px 8px 0px 8px;
+	cursor: pointer;
 }
 
 .ad .ad_img li img {
@@ -324,7 +325,6 @@ div.ui_mc_ad_card img {
 	width: 100%;
 	margin-top: 32px;
 	height: 55px;
-	width: 100%;
 }
 
 .ui_mc_advantage .advantage {
@@ -334,29 +334,21 @@ div.ui_mc_ad_card img {
 }
 
 .ui_mc_advantage .advantage img {
-	width: 25%;
+	width: 54px;
 	height: 54px;
 	float: left;
+	margin-right:10px;
 }
 
-.ui_mc_advantage .advantage .desc {
-	float: right;
-	width: 75%;
+.ui_mc_advantage .advantage > p > span{
+	font-size:12px;
 }
 
-.ui_mc_advantage .advantage .desc h3 {
-	line-height: 24px;
-	font-size: 14px;
-	font-weight: bold;
-	vertical-align: top;
-	padding-left: 5px;
-}
-
-.ui_mc_advantage .advantage .desc span {
-	font-size: 12px;
-	line-height: 18px;
-	padding-left: 7px;
-	display: block;
+.ui_mc_advantage .advantage > p > span > b{
+	font-weight:bolder;
+	font-size:14px;
+	display:block;
+	margin-bottom:5px;
 }
 
 .ui_mc_footer {

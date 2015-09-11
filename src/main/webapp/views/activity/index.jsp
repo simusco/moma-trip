@@ -23,7 +23,7 @@
 		}
 		
 		$.extend({
-			serializeForTags:function(array){
+			serializeForTags:function(array, op){
 				var form = $('<form style="display:none;"></form>');
 				
 				for(var i=0;i<array.length;i++){
@@ -37,7 +37,14 @@
 					}
 				}
 				
-				//$('body').append(form);
+				for(m in op){
+					var value = op[m];
+					var e = $('<input type="hidden" name="'+m+'"/>');
+					e.val(value);
+					
+					form.append(e);
+				}
+				
 				return form.serialize();
 			},
 			activeSelect:function(o){
@@ -49,21 +56,49 @@
 			}
 		});
 		
-		$(function(){
+		function displayActivityPlan(op){
 			var activityPlanContent = $('#activity_plan_content');
+			var tags = getCheckValues();
+			var tagsSerial = $.serializeForTags(tags, op);
 			
+			queryActivityPlan(tagsSerial, function(data){
+				activityPlanContent.html(data);
+			});
+			
+		}
+		
+		$(function(){
 			$('.activity_plan_btn').each(function(){
 				$(this).on('click', function(){
 					$.activeSelect($(this));
 					
-					var tags = getCheckValues();
-					var tagsSerial = $.serializeForTags(tags);
-					
-					queryActivityPlan(tagsSerial, function(data){
-						activityPlanContent.html(data);
-					});
+					displayActivityPlan({});
 				});
 			});
+			
+			var imgs = [];
+			$('.switch_btn li').each(function(){
+				var adImgUrl = $(this).attr('ad-img-url');
+				imgs.push(adImgUrl);
+				
+				$(this).click(function(){
+					$('#switch_display_screen').attr('src', $(this).attr('ad-img-url'));
+				});
+			});
+			
+			var index = 0;
+			window.setInterval(function(){
+				if(index > imgs.length) index = 0;
+				
+				$('#switch_display_screen').attr('src',imgs[index]);
+				
+				index ++;
+			},5000);
+			
+			$('#switch_btn').css('left', $(document).width() / 2 - $('#switch_btn').width() / 2);
+			
+			//load data from server.
+			displayActivityPlan();
 		});
 		
 		function queryActivityPlan(tags, fn){
@@ -83,16 +118,21 @@
 		function getCheckValues(){
 			
 			var tags = [];
-			$('.tags_bar li[active=true]').each(function(){
+			$('.tag_items > li[active=true]').each(function(){
 				var tagId = $(this).attr('tag-id');
 				var tagPid = $(this).attr('tag-pid');
 				var tagValue = $(this).attr('tag-value');
-				var tag = {'tagId':tagId,'parentId':tagPid,'value':tagValue};
+				var tagName = $(this).attr('tag');
+				var tag = {'tagId':tagId,'parentId':tagPid,'value':tagValue,'tag':tagName};
 				
 				tags.push(tag);
 			});
 			return tags;
 			
+		}
+		
+		function gotoPage(pageIndex){
+			displayActivityPlan({'currPage':pageIndex});
 		}
 	</script>
 
@@ -118,12 +158,12 @@
 
     <div class="ad">
         <ul class="switch_btn" id="switch_btn">
-            <li></li>
-            <li></li>
-            <li></li>
+            <li ad-img-url='<%=request.getContextPath()  %>/images/ad_01.png'></li>
+            <li ad-img-url='<%=request.getContextPath()  %>/images/ad_02.png'></li>
+            <li ad-img-url='<%=request.getContextPath()  %>/images/ad_03.png'></li>
         </ul>
         <ul class="ad_img">
-            <li><img src="<%=request.getContextPath()  %>/images/ad_01.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_01.png" id="switch_display_screen"></li>
         </ul>
     </div>
 
@@ -141,7 +181,7 @@
             	<c:forEach items="${webResult.object }" var="tagMap" varStatus="vs">
 	                <div class="tag_row">
 	                    <span>
-	                        <img src="${tagMap.key.icon }">${tagMap.key.tag }：
+	                        <img src="<%=request.getContextPath()  %>/${tagMap.key.icon }">${tagMap.key.tag }：
 	                    </span>
 	                    <ul class="tag_items">
 	                    	<c:forEach items="${tagMap.value}" var="tag">
@@ -150,7 +190,9 @@
 								tag-id="${tag.tagId }"
 								tag-pid="${tag.parentId }"
 								tag-value="${tag.value }"
-								class="activity_plan_btn">
+								class="activity_plan_btn"
+								tag="${tag.tag }"
+								>
 								<a href="javascript:vf();">${tag.tag }</a>
 	                        </c:forEach>
 	                    </ul>
@@ -160,18 +202,6 @@
         </div>
         <div class="active_plan_content">
         	<section id="activity_plan_content"></section>
-            <div class="ui_mc_pagination_bar">
-                <ul class="ui_mc_pagination">
-                    <li><a href="">上一面</a></li>
-                    <li><a href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="">6</a></li>
-                    <li><a href="">下一页</a></li>
-                </ul>
-            </div>
 
             <div class="ui_mc_ad_card">
                 <img src="<%=request.getContextPath()  %>/images/ad_card_01.png">
@@ -179,25 +209,31 @@
 
             <div class="ui_mc_advantage">
                 <div class="advantage">
-                    <img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
-                    <div class="desc">
-                        <h3>专业服务</h3>
-                        <span>公司所有的服务人员都是有旅游专业背景</span>
-                    </div>
+                    <p>
+                    	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
+                        <span>
+                        	<b>专业服务</b>
+                        	公司所有的服务人员都是有旅游专业背景
+                        </span>
+                    </p>
                 </div>
                 <div class="advantage">
-                    <img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
-                    <div class="desc">
-                        <h3>专业服务</h3>
-                        <span>公司所有的服务人员都是有旅游专业背景</span>
-                    </div>
+                    <p>
+                    	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
+                        <span>
+                        	<b>专业服务</b>
+                        	公司所有的服务人员都是有旅游专业背景
+                        </span>
+                    </p>
                 </div>
                 <div class="advantage">
-                    <img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
-                    <div class="desc">
-                        <h3>专业服务</h3>
-                        <span>公司所有的服务人员都是有旅游专业背景</span>
-                    </div>
+                    <p>
+                    	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
+                        <span>
+                        	<b>专业服务</b>
+                        	公司所有的服务人员都是有旅游专业背景
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>

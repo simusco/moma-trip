@@ -6,19 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.moma.trip.common.po.activity.Tags;
-
 public class Pagination implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1768306776032845344L;
-	private List<Object> list = new ArrayList<Object>();
+	private List<?> list = new ArrayList();
 	private int pageSize;
 	private int currPage;
 	private long total;
 	private Map<String, Object> params = new HashMap<String, Object>();
+	private long totalPage;
 
 	public Pagination() {
 		this.pageSize = 15;
@@ -26,11 +25,11 @@ public class Pagination implements Serializable{
 		total = 0;
 	}
 
-	public List<Object> getList() {
+	public List<?> getList() {
 		return list;
 	}
 
-	public void setList(List<Object> list) {
+	public void setList(List<?> list) {
 		this.list = list;
 	}
 
@@ -51,27 +50,28 @@ public class Pagination implements Serializable{
 	}
 
 	public void setCurrPage(int currPage) {
-		this.currPage = currPage;
+		if(currPage <= 0)
+			this.currPage = 1;
+		else
+			this.currPage = currPage;
 	}
 
 	public long getTotal() {
 		return total;
 	}
 
-	public void setTotalRow(long total) {
+	public void setTotal(long total) {
 		this.total = total;
+		
+		totalPage = (total / pageSize) + (total % pageSize == 0 ? 0 : 1);
 	}
-
+	
 	public Map<String, Object> getParams() {
 		return params;
 	}
 
 	public void setParams(Map<String, Object> params) {
 		this.params = params;
-	}
-
-	public void setTotal(long total) {
-		this.total = total;
 	}
 
 	public Map<String, Object> map(){
@@ -81,10 +81,10 @@ public class Pagination implements Serializable{
 		p.put("pageSize", this.pageSize);
 		p.put("currPage", this.currPage);
 		
-		int from = 1;
+		int from = 0;
 		if(this.currPage > 1)
-			from = (this.pageSize * (this.currPage -1)) + 1;
-		int to = from + (this.pageSize -1);
+			from = this.pageSize * (this.currPage -1);
+		int to = from + (this.pageSize);
 		
 		p.put("from", from);
 		p.put("to", to);
@@ -94,6 +94,14 @@ public class Pagination implements Serializable{
 
 	public void put(String key, Object object) {
 		params.put(key, object);
+	}
+
+	public long getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(long totalPage) {
+		this.totalPage = totalPage;
 	}
 	
 }

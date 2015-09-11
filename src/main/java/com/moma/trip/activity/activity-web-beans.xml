@@ -5,11 +5,11 @@
     xmlns:p="http://www.springframework.org/schema/p"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
-    <bean id="trip.tagsAction" class="com.moma.trip.activity.web.TagsAction">
+    <bean id="trip.tagsAction" class="com.moma.trip.activity.web.TagsAction" scope="prototype">
     	<property name="tagsService" ref="trip.tagsService"/>
     </bean>
     
-    <bean id="trip.activityPlanAction" class="com.moma.trip.activity.web.ActivityPlanAction">
+    <bean id="trip.activityPlanAction" class="com.moma.trip.activity.web.ActivityPlanAction"  scope="prototype">
     	<property name="activityPlanService" ref="trip.activityPlanService"/>
     </bean>
     
