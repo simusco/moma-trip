@@ -5,12 +5,12 @@
 
 <struts>
 	<package name="com.moma.trip" extends="web-default" namespace="/trip/activity">
-		<action name="tags" method="tags" class="trip.tagsAction">
-			<result name="success">/views/activity/tags.jsp</result>
+		<action name="index" method="index" class="trip.activityPlanAction">
+			<result name="success">/views/activity/index.jsp</result>
 		</action>
 		
-		<action name="index" method="tags" class="trip.tagsAction">
-			<result name="success">/views/activity/index.jsp</result>
+		<action name="toQuery" method="toQuery" class="trip.activityPlanAction">
+			<result name="success">/views/activity/query.jsp</result>
 		</action>
 		
 		<action name="query" method="query" class="trip.activityPlanAction">

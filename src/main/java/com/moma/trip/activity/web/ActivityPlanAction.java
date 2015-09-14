@@ -21,6 +21,11 @@ public class ActivityPlanAction extends BaseSupportAction {
 	private Pagination activityPlanList = null;
 	private int currPage;
 
+	public String toQuery() {
+		
+		return SUCCESS;
+	}
+	
 	public String query() {
 		Pagination pagination = new Pagination();
 		
@@ -44,6 +49,11 @@ public class ActivityPlanAction extends BaseSupportAction {
 		pagination.setCurrPage(currPage);
 		
 		activityPlanList = activityPlanService.getActivityPlanPageList(pagination);
+		return SUCCESS;
+	}
+	
+	public String index(){
+		
 		return SUCCESS;
 	}
 

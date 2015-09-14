@@ -1,6 +1,70 @@
+/* line 1, ../../app/styles/test.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 17, ../../app/styles/test.scss */
+body {
+  line-height: 1;
+}
+
+/* line 20, ../../app/styles/test.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 23, ../../app/styles/test.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 26, ../../app/styles/test.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+/* line 32, ../../app/styles/test.scss */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+/* line 35, ../../app/styles/test.scss */
+ins {
+  text-decoration: none;
+}
+
+/* line 38, ../../app/styles/test.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 42, ../../app/styles/test.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
 body {
 	background-color: #ffffff;
-	max-width: 100%;
 	min-width: 1024px;
 }
 
@@ -411,8 +475,325 @@ div.ui_mc_ad_card img {
 	margin-top: 20px;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1200px){
 	.ui_mc_top, .ui_mc_content, .ui_mc_navbar .menu_item {
-		padding: 0 10% 0 10%;
+		width:819px;
+		margin-left:auto;
+		margin-right:auto;
 	}
+	
+	/* line 47, ../../app/styles/test.scss */
+	.clearfix {
+	  display: block;
+	}
+	
+	/* line 51, ../../app/styles/test.scss */
+	.clearfix:after {
+	  content: ".";
+	  display: block;
+	  height: 0px;
+	  clear: both;
+	  visibility: hidden;
+	}
+	
+	/* line 93, ../../app/styles/test.scss */
+	.ui_mc_rec {
+	  clear: both;
+	  margin-top: 30px;
+	}
+	/* line 97, ../../app/styles/test.scss */
+	.ui_mc_rec .title {
+	  display: block;
+	  height: 46px;
+	  border-bottom: 1px solid #f3f3f3;
+	  line-height: 46px;
+	  text-align: center;
+	  font-family: "Microsoft YaHei";
+	  font-size: 18px;
+	  font-weight: bolder;
+	  margin: 0px auto;
+	}
+	/* line 106, ../../app/styles/test.scss */
+	.ui_mc_rec .title .more {
+	  font-size: 12px;
+	  padding-left: 8px;
+	  padding-right: 8px;
+	}
+	/* line 113, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 {
+	  width: 100%;
+	  text-align: center;
+	}
+	/* line 63, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul {
+	  display: block;
+	  float: left;
+	  clear: both;
+	  position: relative;
+	  margin-left: -26px;
+	}
+	/* line 70, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul li {
+	  float: left;
+	  margin-left: 26px;
+	  margin-top: 26px;
+	}
+	/* line 75, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul li img {
+	  width: 255px;
+	  height: 187px;
+	}
+	/* line 117, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 {
+	  width: 100%;
+	  text-align: center;
+	}
+	/* line 63, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul {
+	  display: block;
+	  float: left;
+	  clear: both;
+	  position: relative;
+	  margin-left: -26px;
+	}
+	/* line 70, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul li {
+	  float: left;
+	  margin-left: 26px;
+	  margin-top: 26px;
+	}
+	/* line 75, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul li img {
+	  width: 185px;
+	  height: 164px;
+	}
+	
+	/* line 125, ../../app/styles/test.scss */
+	.ui_mc_reason {
+	  margin-top: 30px;
+	}
+	/* line 128, ../../app/styles/test.scss */
+	.ui_mc_reason .title {
+	  display: block;
+	  height: 46px;
+	  line-height: 46px;
+	  text-align: left;
+	  font-family: "Microsoft YaHei";
+	  font-size: 18px;
+	  font-weight: bolder;
+	  margin-left: auto;
+	  margin-right: auto;
+	  color:#666666;
+	}
+	/* line 138, ../../app/styles/test.scss */
+	.ui_mc_reason .text {
+	  float: left;
+	  margin-top: -30px;
+	}
+	/* line 142, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row {
+	  margin-top: 30px;
+	  margin-left: -30px;
+	}
+	/* line 146, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason {
+	  float: left;
+	  margin-left: 30px;
+	}
+	/* line 150, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content {
+	  width: 182px;
+	  float: left;
+	}
+	/* line 154, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content h1 {
+	  font-size: 12px;
+	  color:#333333;
+	}
+	/* line 158, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content span {
+	  font-size: 10px;
+	  color:#999999;
+	}
+	/* line 163, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason img {
+	  float: left;
+	  width: 72px;
+	  height: 72px;
+	  margin-right: 10px;
+	}
+	/* line 173, ../../app/styles/test.scss */
+	.ui_mc_reason .media {
+	  float: left;
+	  margin-left: 30px;
+	}
+	/* line 177, ../../app/styles/test.scss */
+	.ui_mc_reason .media img {
+	  width: 231px;
+	  height: 192px;
+	}
+		
 }
+
+@media only screen and (min-width: 1280px){
+	
+	.ui_mc_top, .ui_mc_content, .ui_mc_navbar .menu_item {
+		width:1013px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	
+	/* line 47, ../../app/styles/test.scss */
+	.clearfix {
+	  display: block;
+	}
+	
+	/* line 51, ../../app/styles/test.scss */
+	.clearfix:after {
+	  content: ".";
+	  display: block;
+	  height: 0px;
+	  clear: both;
+	  visibility: hidden;
+	}
+	
+	/* line 93, ../../app/styles/test.scss */
+	.ui_mc_rec {
+	  clear: both;
+	  margin-top: 30px;
+	}
+	/* line 97, ../../app/styles/test.scss */
+	.ui_mc_rec .title {
+	  display: block;
+	  height: 46px;
+	  border-bottom: 1px solid #f3f3f3;
+	  line-height: 46px;
+	  text-align: center;
+	  font-family: "Microsoft YaHei";
+	  font-size: 18px;
+	  font-weight: bolder;
+	  margin: 0px auto;
+	}
+	/* line 106, ../../app/styles/test.scss */
+	.ui_mc_rec .title .more {
+	  font-size: 12px;
+	  padding-left: 8px;
+	  padding-right: 8px;
+	}
+	/* line 113, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 {
+	  width: 100%;
+	  text-align: center;
+	}
+	/* line 63, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul {
+	  display: block;
+	  float: left;
+	  clear: both;
+	  position: relative;
+	  margin-left: -32px;
+	}
+	/* line 70, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul li {
+	  float: left;
+	  margin-left: 32px;
+	  margin-top: 32px;
+	}
+	/* line 75, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_3 ul li img {
+	  width: 316px;
+	  height: 233px;
+	}
+	/* line 117, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 {
+	  width: 100%;
+	  text-align: center;
+	}
+	/* line 63, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul {
+	  display: block;
+	  float: left;
+	  clear: both;
+	  position: relative;
+	  margin-left: -32px;
+	}
+	/* line 70, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul li {
+	  float: left;
+	  margin-left: 32px;
+	  margin-top: 32px;
+	}
+	/* line 75, ../../app/styles/test.scss */
+	.ui_mc_rec .rec_img_list_4 ul li img {
+	  width: 228px;
+	  height: 202px;
+	}
+	
+	/* line 125, ../../app/styles/test.scss */
+	.ui_mc_reason {
+	  margin-top: 30px;
+	}
+	/* line 128, ../../app/styles/test.scss */
+	.ui_mc_reason .title {
+	  display: block;
+	  height: 46px;
+	  line-height: 46px;
+	  text-align: left;
+	  font-family: "Microsoft YaHei";
+	  font-size: 18px;
+	  font-weight: bolder;
+	  margin-left: auto;
+	  margin-right: auto;
+	  color:#666666;
+	}
+	/* line 138, ../../app/styles/test.scss */
+	.ui_mc_reason .text {
+	  float: left;
+	  margin-top: -30px;
+	}
+	/* line 142, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row {
+	  margin-top: 30px;
+	  margin-left: -30px;
+	}
+	/* line 146, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason {
+	  float: left;
+	  margin-left: 30px;
+	}
+	/* line 150, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content {
+	  width: 230px;
+	  float: left;
+	}
+	/* line 154, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content h1 {
+	  font-size: 14px;
+	  line-height: 24px;
+	  color:#333333;
+	}
+	/* line 159, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason .content span {
+	  line-height: 20px;
+	  font-size: 12px;
+	  color:#999999;
+	}
+	/* line 165, ../../app/styles/test.scss */
+	.ui_mc_reason .text .reason_row .reason img {
+	  float: left;
+	  width: 90px;
+	  height: 90px;
+	  margin-right: 10px;
+	}
+	/* line 175, ../../app/styles/test.scss */
+	.ui_mc_reason .media {
+	  float: left;
+	  margin-left: 30px;
+	}
+	/* line 179, ../../app/styles/test.scss */
+	.ui_mc_reason .media img {
+	  width: 288px;
+	  height: 245px;
+	}
+	
+}	

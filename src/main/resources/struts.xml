@@ -28,6 +28,7 @@
         </action>
     </package>
 
-    <include file="com/moma/trip/activity/activity-action.xml"/>
+    <include file="com/moma/trip/activity/web/ActivityPlanAction.xml"/>
+    <include file="com/moma/trip/activity/web/TagsAction.xml"/>
     
 </struts>

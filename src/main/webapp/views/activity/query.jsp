@@ -12,7 +12,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link type="text/css" href="<%=request.getContextPath()  %>/css/index.css" rel="stylesheet"/>
+    <link type="text/css" href="<%=request.getContextPath()  %>/css/reset.css" rel="stylesheet"/>
+    <link type="text/css" href="<%=request.getContextPath()  %>/css/query.css" rel="stylesheet"/>
     
     <script src="<%=request.getContextPath()  %>/public/jquery/jquery.min.js"></script>
     <script src="<%=request.getContextPath()  %>/scripts/index.js"></script>
@@ -137,39 +138,6 @@
 	    	//load data from server.
 	    	displayActivityPlan();
 	    });
-	    
-	    $.fn.extend({
-	    	setCenterAlign:function(){
-	    		'use strict';
-
-	    		var obj = $(this);
-	    		var marginLeft = parseFloat(obj.css('margin-left').replace("px",""));
-	    		var recWidth = obj.width();
-	    		var winWidth = $(window).width();
-	    		var recLeft = (winWidth - recWidth - marginLeft) / 2;
-
-	    		obj.css('left', recLeft);
-	    	}
-	    });
-
-	    function redraw(){
-	    	'use strict';
-
-	    	/*
-	    	$('*[ui-align=center]').each(function(){
-	    		$(this).setCenterAlign();
-	    	});*/
-	    }
-
-	    $(function(){
-	    	'use strict';
-
-	    	$(window).resize(function() {
-	    		redraw();
-	    	});
-
-	    	redraw();
-	    });
     </script>
 </head>
 <body>
@@ -185,8 +153,8 @@
 
     <div class="ui_mc_navbar">
         <ul class="menu_item">
-            <li active="true"><a href="<%=request.getContextPath()  %>/trip/activity/index.action">首页</a></li>
-            <li><a href="<%=request.getContextPath()  %>/trip/activity/toQuery.action">全部方案</a></li>
+            <li><a href="<%=request.getContextPath()  %>/trip/activity/index.action">首页</a></li>
+            <li active="true"><a href="<%=request.getContextPath()  %>/trip/activity/toQuery.action">全部方案</a></li>
             <li><a href="">企业福利</a></li>
         </ul>
     </div>
@@ -203,86 +171,40 @@
     </div>
 
     <div class="ui_mc_content">
+        <ul class="recommend">
+            <li><img src="<%=request.getContextPath()  %>/images/ad_03.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_02.png"></li>
+            <li><img src="<%=request.getContextPath()  %>/images/ad_04.jpg"></li>
+        </ul>
+        <div class="tags">
+            <div class="title">
+                <span>筛选方案</span>
+            </div>
+            <div class="content">
+            	<c:forEach items="${webResult.object }" var="tagMap" varStatus="vs">
+	                <div class="tag_row">
+	                    <span>
+	                        <img src="<%=request.getContextPath()  %>/${tagMap.key.icon }">${tagMap.key.tag }：
+	                    </span>
+	                    <ul class="tag_items">
+	                    	<c:forEach items="${tagMap.value}" var="tag">
+	                        <li 
+								<c:if test="${tag.active }">active="true"</c:if>
+								tag-id="${tag.tagId }"
+								tag-pid="${tag.parentId }"
+								tag-value="${tag.value }"
+								class="activity_plan_btn"
+								tag="${tag.tag }"
+								>
+								<a href="javascript:vf();">${tag.tag }</a>
+	                        </c:forEach>
+	                    </ul>
+	                </div>
+	            </c:forEach>
+            </div>
+        </div>
         <div class="active_plan_content">
-        	<div class="ui_mc_rec clearfix">
-				<span class="title title_theme_a">热门推荐<span class="more">更多</span></span>
-				<div class="rec_img_list_3 clearfix">
-					<ul ui-align="center" class="clearfix">
-						<li><img src="<%=request.getContextPath()  %>/images/rec002.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/rec001.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/rec001.png"></li>
-					</ul>
-					<ul ui-align="center" class="clearfix">
-						<li><img src="<%=request.getContextPath()  %>/images/rec001.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/rec001.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/rec001.png"></li>
-					</ul>
-				</div>
-			</div>
-		
-			<div class="ui_mc_rec clearfix">
-				<span class="title title_theme_a">服务案例<span class="more">更多</span></span>
-				<div class="rec_img_list_4 clearfix">
-					<ul ui-align="center" class="clearfix">
-						<li><img src="<%=request.getContextPath()  %>/images/sev_004.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_002.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_003.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_002.png"></li>
-					</ul>
-				</div>
-			</div>
-		
-			<div class="ui_mc_reason clearfix">
-				<span class="title">选择一起团建的4大理由</span>
-				<div class="clearfix" style="float: left;position: relative;" ui-align="center">
-					<div class="text clearfix">
-						<div class="reason_row clearfix">
-							<div class="reason">
-								<a href=""><img src="<%=request.getContextPath()  %>/images/reason_001.png"></a>
-								<div class="content">
-									<h1>【品牌实力】</h1>
-								<span>
-									实力指实在的力量。一个国家是存在两种实力的，一种是硬实力，一种是软实力。
-								</span>
-								</div>
-							</div>
-							<div class="reason">
-								<a href=""><img src="<%=request.getContextPath()  %>/images/reason_001.png"></a>
-								<div class="content">
-									<h1>【品牌实力】</h1>
-							<span>
-								实力指实在的力量。一个国家是存在两种实力的，一种是硬实力，一种是软实力。
-							</span>
-								</div>
-							</div>
-						</div>
-		
-						<div class="reason_row clearfix">
-							<div class="reason">
-								<a href=""><img src="<%=request.getContextPath()  %>/images/reason_001.png"></a>
-								<div class="content">
-									<h1>【品牌实力】</h1>
-							<span>
-								实力指实在的力量。一个国家是存在两种实力的，一种是硬实力，一种是软实力。
-							</span>
-								</div>
-							</div>
-							<div class="reason">
-								<a href=""><img src="<%=request.getContextPath()  %>/images/reason_001.png"></a>
-								<div class="content">
-									<h1>【品牌实力】</h1>
-							<span>
-								实力指实在的力量。一个国家是存在两种实力的，一种是硬实力，一种是软实力。
-							</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="media clearfix">
-						<a href=""><img src="<%=request.getContextPath()  %>/images/video_img.png"></a>
-					</div>
-				</div>
-			</div>
+        	<section id="activity_plan_content"></section>
 
             <div class="ui_mc_ad_card">
                 <img src="<%=request.getContextPath()  %>/images/ad_card_01.png">
