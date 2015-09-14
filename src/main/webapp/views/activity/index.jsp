@@ -15,133 +15,130 @@
     <link type="text/css" href="<%=request.getContextPath()  %>/css/reset.css" rel="stylesheet"/>
     <link type="text/css" href="<%=request.getContextPath()  %>/css/index.css" rel="stylesheet"/>
     
-    <style type="text/css">
-    </style>
-    
     <script src="<%=request.getContextPath()  %>/public/jquery/jquery.min.js"></script>
-	<script type="text/javascript">
-		function vf(){
-			
-		}
-		
-		$.extend({
-			serializeForTags:function(array, op){
-				var form = $('<form style="display:none;"></form>');
-				
-				for(var i=0;i<array.length;i++){
-					var o = array[i];
-					for(x in o){
-						var value = o[x];
-						var e = $('<input type="hidden" name="tags['+i+'].'+x+'"/>');
-						e.val(value);
-						
-						form.append(e);
-					}
-				}
-				
-				for(m in op){
-					var value = op[m];
-					var e = $('<input type="hidden" name="'+m+'"/>');
-					e.val(value);
-					
-					form.append(e);
-				}
-				
-				return form.serialize();
-			},
-			activeSelect:function(o){
-				o.parent().find('> li').each(function(){
-					$(this).attr('active', 'false');
-				});
-				
-				o.attr('active','true');
-			}
-		});
-		
-		function displayActivityPlan(op){
-			var activityPlanContent = $('#activity_plan_content');
-			var tags = getCheckValues();
-			var tagsSerial = $.serializeForTags(tags, op);
-			
-			queryActivityPlan(tagsSerial, function(data){
-				activityPlanContent.html(data);
-			});
-			
-		}
-		
-		$(function(){
-			$('.activity_plan_btn').each(function(){
-				$(this).on('click', function(){
-					$.activeSelect($(this));
-					
-					displayActivityPlan({});
-				});
-			});
-			
-			var imgs = [];
-			$('.switch_btn li').each(function(){
-				var adImgUrl = $(this).attr('ad-img-url');
-				imgs.push(adImgUrl);
-				
-				$(this).click(function(){
-					$('#switch_display_screen').attr('src', $(this).attr('ad-img-url'));
-					$('.switch_btn li').each(function(){
-						$(this).css('background-color','#ffffff');
-					});
-					$(this).css('background-color','#fb8300');
-				});
-			});
-			
-			var index = 0;
-			window.setInterval(function(){
-				if(index > imgs.length) index = 0;
-				
-				$('#switch_display_screen').attr('src',imgs[index]);
-				
-				index ++;
-			},5000);
-			
-			$('#switch_btn').css('left', $(document).width() / 2 - $('#switch_btn').width() / 2);
-			
-			//load data from server.
-			displayActivityPlan();
-		});
-		
-		function queryActivityPlan(tags, fn){
-			$.ajax({
-				url : "<%=request.getContextPath()  %>/trip/activity/query.action",
-				async : false,
-				data : tags,
-				success : function(resp) {
-					fn(resp);
-				},
-				error : function(resp) {
-					
-				}
-			});
-		}
-		
-		function getCheckValues(){
-			
-			var tags = [];
-			$('.tag_items > li[active=true]').each(function(){
-				var tagId = $(this).attr('tag-id');
-				var tagPid = $(this).attr('tag-pid');
-				var tagValue = $(this).attr('tag-value');
-				var tagName = $(this).attr('tag');
-				var tag = {'tagId':tagId,'parentId':tagPid,'value':tagValue,'tag':tagName};
-				
-				tags.push(tag);
-			});
-			return tags;
-			
-		}
-		
-		function gotoPage(pageIndex){
-			displayActivityPlan({'currPage':pageIndex});
-		}
-	</script>
-
+    <script src="<%=request.getContextPath()  %>/scripts/index.js"></script>
+    
+    <script type="text/javascript">
+	    function vf(){
+	    }
+	
+	    $.extend({
+	    	serializeForTags:function(array, op){
+	    		var form = $('<form style="display:none;"></form>');
+	    		
+	    		for(var i=0;i<array.length;i++){
+	    			var o = array[i];
+	    			for(x in o){
+	    				var value = o[x];
+	    				var e = $('<input type="hidden" name="tags['+i+'].'+x+'"/>');
+	    				e.val(value);
+	    				
+	    				form.append(e);
+	    			}
+	    		}
+	    		
+	    		for(m in op){
+	    			var value = op[m];
+	    			var e = $('<input type="hidden" name="'+m+'"/>');
+	    			e.val(value);
+	    			
+	    			form.append(e);
+	    		}
+	    		
+	    		return form.serialize();
+	    	},
+	    	activeSelect:function(o){
+	    		o.parent().find('> li').each(function(){
+	    			$(this).attr('active', 'false');
+	    		});
+	    		
+	    		o.attr('active','true');
+	    	}
+	    });
+	
+	    function displayActivityPlan(op){
+	    	var activityPlanContent = $('#activity_plan_content');
+	    	var tags = getCheckValues();
+	    	var tagsSerial = $.serializeForTags(tags, op);
+	    	
+	    	queryActivityPlan(tagsSerial, function(data){
+	    		activityPlanContent.html(data);
+	    	});
+	    	
+	    }
+	
+	    function queryActivityPlan(tags, fn){
+	    	$.ajax({
+	    		url : "<%=request.getContextPath()  %>/trip/activity/query.action",
+	    		async : false,
+	    		data : tags,
+	    		success : function(resp) {
+	    			fn(resp);
+	    		},
+	    		error : function(resp) {
+	    			
+	    		}
+	    	});
+	    }
+	
+	    function getCheckValues(){
+	    	
+	    	var tags = [];
+	    	$('.tag_items > li[active=true]').each(function(){
+	    		var tagId = $(this).attr('tag-id');
+	    		var tagPid = $(this).attr('tag-pid');
+	    		var tagValue = $(this).attr('tag-value');
+	    		var tagName = $(this).attr('tag');
+	    		var tag = {'tagId':tagId,'parentId':tagPid,'value':tagValue,'tag':tagName};
+	    		
+	    		tags.push(tag);
+	    	});
+	    	return tags;
+	    	
+	    }
+	
+	    function gotoPage(pageIndex){
+	    	displayActivityPlan({'currPage':pageIndex});
+	    }
+    
+	    $(function(){
+	    	$('.activity_plan_btn').each(function(){
+	    		$(this).on('click', function(){
+	    			$.activeSelect($(this));
+	    			
+	    			displayActivityPlan({});
+	    		});
+	    	});
+	    	
+	    	var imgs = [];
+	    	$('.switch_btn li').each(function(){
+	    		var adImgUrl = $(this).attr('ad-img-url');
+	    		imgs.push(adImgUrl);
+	    		
+	    		$(this).click(function(){
+	    			$('#switch_display_screen').attr('src', $(this).attr('ad-img-url'));
+	    			$('.switch_btn li').each(function(){
+	    				$(this).css('background-color','#ffffff');
+	    			});
+	    			$(this).css('background-color','#fb8300');
+	    		});
+	    	});
+	    	
+	    	var index = 0;
+	    	window.setInterval(function(){
+	    		if(index > imgs.length) index = 0;
+	    		
+	    		$('#switch_display_screen').attr('src',imgs[index]);
+	    		
+	    		index ++;
+	    	},5000);
+	    	
+	    	$('#switch_btn').css('left', $(document).width() / 2 - $('#switch_btn').width() / 2);
+	    	
+	    	//load data from server.
+	    	displayActivityPlan();
+	    });
+    </script>
 </head>
 <body>
     <div class="ui_mc_top">
@@ -260,6 +257,6 @@
         </ul>
         <span class="copyright">copyright©2014-2015 团建宝版权所有 京ICP备14017744号-5</span>
     </div>
-
+	
 </body>
 </html>
