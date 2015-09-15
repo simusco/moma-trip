@@ -52,6 +52,26 @@
 	    		});
 	    		
 	    		o.attr('active','true');
+	    	},
+	    	uiAnimation:{
+	    		moveUp:function(){
+	    			$('*[ui-move-up]').each(function(){
+			    		var o = $(this);
+			    		var v = o.attr('ui-move-up');
+			    		
+			    		if(parseInt(v) <=0 || parseInt(v) >= 1000){
+			    			v = 0;
+			    		}
+			    		
+			    		o.mouseover(function(){
+			    			$(this).css('margin-top','0px');
+			    		});
+			    		
+			    		o.mouseout(function(){
+			    			$(this).css('margin-top',v+'px');
+			    		});
+			    	});
+	    		}
 	    	}
 	    });
 	
@@ -136,6 +156,8 @@
 	    	
 	    	//load data from server.
 	    	displayActivityPlan();
+	    	
+	    	$.uiAnimation.moveUp();
 	    });
 	    
 	    $.fn.extend({
@@ -224,10 +246,30 @@
 				<span class="title title_theme_a">服务案例<span class="more">更多</span></span>
 				<div class="rec_img_list_4 clearfix">
 					<ul ui-align="center" class="clearfix">
-						<li><img src="<%=request.getContextPath()  %>/images/sev_004.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_002.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_003.png"></li>
-						<li><img src="<%=request.getContextPath()  %>/images/sev_002.png"></li>
+						<li>
+							<div style="position: relative;z-index: 0;margin-top: 5px;" ui-move-up="5">
+								<img src="<%=request.getContextPath()  %>/images/sev_001.png">
+								<div class="img_title">云筹之家</div>
+							</div>
+						</li>
+						<li>
+							<div style="position: relative;z-index: 0;margin-top: 5px;" ui-move-up="5">
+								<img src="<%=request.getContextPath()  %>/images/sev_002.png">
+								<div class="img_title">服务案例一</div>
+							</div>
+						</li>
+						<li>
+							<div style="position: relative;z-index: 0;margin-top: 5px;" ui-move-up="5">
+								<img src="<%=request.getContextPath()  %>/images/sev_003.png">
+								<div class="img_title">云筹之家</div>
+							</div>
+						</li>
+						<li class="active">
+							<div style="position: relative;z-index: 0;margin-top: 5px;" ui-move-up="5">
+								<img src="<%=request.getContextPath()  %>/images/sev_002.png">
+								<div class="img_title">服务案例三</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>

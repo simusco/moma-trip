@@ -537,6 +537,7 @@ div.ui_mc_ad_card img {
 	  float: left;
 	  margin-left: 26px;
 	  margin-top: 26px;
+	  cursor: pointer;
 	}
 	/* line 75, ../../app/styles/test.scss */
 	.ui_mc_rec .rec_img_list_3 ul li img {
@@ -561,11 +562,27 @@ div.ui_mc_ad_card img {
 	  float: left;
 	  margin-left: 26px;
 	  margin-top: 26px;
+	  cursor: pointer;
 	}
 	/* line 75, ../../app/styles/test.scss */
 	.ui_mc_rec .rec_img_list_4 ul li img {
 	  width: 185px;
 	  height: 164px;
+	}
+	
+	.ui_mc_rec .rec_img_list_4 ul li .img_title{
+		position: absolute;
+		z-index: 100;
+		top: 136px;
+		left: 0px;
+		background: rgba(255,255,255,0.8);
+		height: 28px;
+		text-align: center;
+		line-height: 28px;
+		width: 185px;
+		font-size: 12px;
+		vertical-align: baseline;
+		font-weight: bold;
 	}
 	
 	/* line 125, ../../app/styles/test.scss */
@@ -698,6 +715,7 @@ div.ui_mc_ad_card img {
 	  float: left;
 	  margin-left: 32px;
 	  margin-top: 32px;
+	  cursor: pointer;
 	}
 	/* line 75, ../../app/styles/test.scss */
 	.ui_mc_rec .rec_img_list_3 ul li img {
@@ -722,11 +740,27 @@ div.ui_mc_ad_card img {
 	  float: left;
 	  margin-left: 32px;
 	  margin-top: 32px;
+	  cursor: pointer;
 	}
 	/* line 75, ../../app/styles/test.scss */
 	.ui_mc_rec .rec_img_list_4 ul li img {
 	  width: 228px;
 	  height: 202px;
+	}
+	
+	.ui_mc_rec .rec_img_list_4 ul li .img_title{
+		position: absolute;
+		z-index: 100;
+		top: 166px;
+		left: 0px;
+		background: rgba(255,255,255,0.8);
+		height: 36px;
+		text-align: center;
+		line-height: 36px;
+		width: 228px;
+		font-size: 12px;
+		vertical-align: baseline;
+		font-weight: bold;
 	}
 	
 	/* line 125, ../../app/styles/test.scss */
