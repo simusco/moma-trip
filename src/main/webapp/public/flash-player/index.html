@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>界面超精简无进度控制条的特色播放器,无进度控制条的特色播放器,支持flv,mp4,f4v格式视频节目播放</title>
+<meta name="keywords" content="无进度控制条的特色播放器,支持flv,mp4,f4v格式视频节目播放" />
+<meta name="description" content="无进度控制条的特色播放器,支持flv,mp4,f4v格式视频节目播放，小巧的网页播放器免费下载" />
+<link rel="shortcut icon" href="/favicon.ico" >
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/common.css">
+<link rel="stylesheet" type="text/css" href="http://www.52player.com/Demos/Images/style.css">
+</head>
+<body>
+<!--header/begin-->
+<div id="header">
+<div class="subnav">
+<p class="sublogo"><a href="http://www.52player.com/" target="_blank"><img src="http://www.52player.com/Demos/Images/Culogo.gif" alt="进入我爱播放器官方网站www.52player.com" width="160" height="40" border="0" /></a></p>
+<p class="sublink"><a href="http://www.52player.com/Top/" target="_blank" >下载排行榜</a> <a href="http://www.52player.com/WebPlayer/">网页播放器</a> <a href="http://www.52player.com/MusicPlayer/">音乐播放器</a> <a href="http://www.52player.com/VideoPlayer/">视频播放器</a></p>
+</div>
+</div>
+<!--header/end-->
+
+<!--maincontent/begin-->
+<div class="maincontent">
+<div class="cuplayer" style="margin-top:50px;">
+<fieldset>
+<legend>
+<h4>播放器演示(请在IIS下或其它网站环境下测试)</h4></legend>
+
+<!--免费网页flv,mp4视频播放器PlayerLite/代码开始-->
+<script type="text/javascript" src="images/swfobject.js"></script>
+<div class="video" id="CuPlayer" style="950px;margin:0 auto;">
+<strong>我爱播放器(52player.com) 提示：您的Flash Player版本过低，请<a href="http://www.52player.com/">点此进行网页播放器升级</a>！</strong></div>
+<script type="text/javascript">
+var so = new SWFObject("52playerVM2.swf","CuPlayerVM2","720","400","9","#000000");
+so.addParam("allowfullscreen","true");
+so.addParam("allowscriptaccess","always");
+so.addParam("wmode","opaque");
+so.addParam("quality","high");
+so.addParam("salign","lt");
+so.addVariable("video_file","http://admin.geely.com/upload/201304/586d9cecdddd9b512990eeb5150f5b57.flv"); //视频文件地址
+so.addVariable("playbtn_scale","1"); //播放按钮缩放
+so.addVariable("auto_play","yes"); //是否自动播放
+so.addVariable("clock_display","yes"); 
+so.addVariable("fullscreen_display","y");  //是否允许全屏
+so.write("CuPlayer");
+</script>
+<!--免费网页flv,mp4视频播放器PlayerLite/代码结束-->
+<h1>很酷/界面超精简/无进度控制条的特色播放器,支持flv,mp4,f4v格式视频节目播放</h1>
+
+<ul class="downurllist">
+<li class="demo"><a href="http://www.52player.com/Demos/noControlBarPlayer" target="_blank">本地演示</a></li>
+<li><a href="http://www.52player.com/plus/download.php?open=2&id=64&uhash=5cf13fd6615c66e04f0d6f3c" target="_blank">本地下载</a></li>
+</ul>
+</fieldset>
+</div>
+
+<!--line-->
+<div style="margin-top:50px;">
+<fieldset>
+<legend><h4>播放器介绍</h4></legend>
+  <p> 免费网页flv,mp4视频播放器PlayerLite功能(<span class="cRed2">提示：请在IIS下或其它网站环境下测试</span>)：<br />
+  </p>
+  <div>
+    <div>
+      <div>
+        <p> <strong>免费网页flv,mp4视频播放器PlayerLite，PlayerLite小巧的网页播放器免费下载：</strong><br />
+        </p>
+        <p> 1.支持FlashVars调用html代码中的参数；<br />
+          2.支持Flv/Mp4格式视频文件播放；<br />
+          3.支持显示视频略缩图；<br />
+          4.支持自动播放/点击播放；<br />
+          5.支持是否重复播放；<br />
+          6.支持是否隐藏控制条；<br />
+          7.支持全屏时，是否自动隐藏控制条；隐藏时间可自定义(默认为3秒)；<br />
+          8.显示播放进度条，带预加载，支持拖动播放进度条；<br />
+          9.支持音量控制(默认为75)；<br />
+          10.支持全屏，支持双击全屏；<br />
+          11.显示视频总时长和当前播放进度的位置时间；<br />
+          12.播放器大小，可随意设置；<br />
+          13.视频文件自适应播放器大小；<br />
+          14.代码简洁明了，界面美观，适合各类网站使用。</p>
+      </div>
+    </div>
+  </div>
+  <p><br />
+    使用说明请看下载文件的说明文档 </p>
+</fieldset>
+</div>
+<!--line-->
+<div style="margin-top:50px;">
+  <fieldset>
+    <h4>播放器使用示例1 - 推荐使用本swfObject模式  </h4>
+    <p class="code">&lt;!-- 我爱播放器(52player.com)/代码开始 --&gt;<br />
+      &lt;script type=&quot;text/javascript&quot; src=&quot;images/swfobject.js&quot;&gt;&lt;/script&gt;<br />
+      &lt;div class=&quot;video&quot; id=&quot;CuPlayer&quot; style=&quot;950px;margin:0 auto;&quot;&gt;<br />
+      &lt;strong&gt;我爱播放器(52player.com) 提示：您的Flash Player版本过低，请&lt;a href=&quot;http://www.52player.com/&quot;&gt;点此进行网页播放器升级&lt;/a&gt;！&lt;/strong&gt;&lt;/div&gt;<br />
+      &lt;script type=&quot;text/javascript&quot;&gt;<br />
+      var so = new SWFObject(&quot;<strong>52playerVM2.swf</strong>&quot;,&quot;CuPlayerVM2&quot;,&quot;720&quot;,&quot;400&quot;,&quot;9&quot;,&quot;#000000&quot;);<br />
+      so.addParam(&quot;allowfullscreen&quot;,&quot;true&quot;);<br />
+      so.addParam(&quot;allowscriptaccess&quot;,&quot;always&quot;);<br />
+      so.addParam(&quot;wmode&quot;,&quot;opaque&quot;);<br />
+      so.addParam(&quot;quality&quot;,&quot;high&quot;);<br />
+      so.addParam(&quot;salign&quot;,&quot;lt&quot;);<br />
+      so.addVariable(&quot;<strong>video_file</strong>&quot;,&quot;<strong>test.mp4</strong>&quot;); //视频文件地址<br />
+      so.addVariable(&quot;<strong>playbtn_scale</strong>&quot;,&quot;<strong>1</strong>&quot;); //播放按钮缩放<br />
+      so.addVariable(&quot;<strong>auto_play</strong>&quot;,&quot;<strong>yes</strong>&quot;); //是否自动播放<br />
+      so.addVariable(&quot;<strong>clock_display</strong>&quot;,&quot;<strong>yes</strong>&quot;); <br />
+      so.addVariable(&quot;<strong>fullscreen_display</strong>&quot;,&quot;<strong>y</strong>&quot;);  //是否允许全屏<br />
+      so.write(&quot;CuPlayer&quot;);<br />
+      &lt;/script&gt;<br />
+      &lt;!-- 我爱播放器(52player.com)/代码结束 --&gt;</p>
+  </fieldset>
+</div> 
+<div style="margin-top:50px;">
+  <fieldset>
+    <h4>播放器使用示例2 - <span class="code">embed</span>模式 </h4>
+    <pre id="line1"></pre>
+    <p class="code"> &lt;embed type=&quot;application/x-shockwave-flash&quot; src=&quot;52playerVM2.swf&quot; id=&quot;CuPlayerVM&quot; name=&quot;CuPlayerV4&quot; bgcolor=&quot;#000000&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; wmode=&quot;opaque&quot; salign=&quot;lt&quot; flashvars=&quot;video_file=test.mp4&amp;playbtn_scale=1&amp;auto_play=yes&amp;clock_display=yes&amp;fullscreen_display=y&quot; height=&quot;325&quot; width=&quot;520&quot;&gt; </p>
+  </fieldset>
+</div>
+<div style="margin-top:50px;">
+  <fieldset>
+<legend><h4>播放器下载</h4></legend>
+<p><ul class="downurllist">
+<li class="demo"><a href="http://www.52player.com/Demos/noControlBarPlayer" target="_blank">本地演示</a></li>
+<li><a href="http://www.52player.com/plus/download.php?open=2&id=64&uhash=5cf13fd6615c66e04f0d6f3c" target="_blank">本地下载</a></li>
+</ul>
+</p>
+</fieldset>
+</div>
+
+
+
+
+
+</div>
+<!--maincontent/end-->
+
+
+
+
+<div id="footer" class="clearfix">
+
+<div class="copyright">2010-2013(C) <strong><a href="http://www.52player.com/" target="_blank" title="我爱播放器" class="cRed">www.52player.com</a></strong> 我爱播放器 Powered by <strong>iWebPlayer</strong> Center  </div>
+<div style="display:none;">
+			<script src="http://s20.cnzz.com/stat.php?id=3992412&web_id=3992412&show=pic" 
+			language="JavaScript"></script>
+  </div>
+  </div>
+</div>
+</body>
+</html>

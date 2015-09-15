@@ -619,7 +619,7 @@ div.ui_mc_ad_card img {
 	}
 	/* line 150, ../../app/styles/test.scss */
 	.ui_mc_reason .text .reason_row .reason .content {
-	  width: 182px;
+	  width: 162px;
 	  float: left;
 	}
 	/* line 154, ../../app/styles/test.scss */
@@ -643,11 +643,7 @@ div.ui_mc_ad_card img {
 	.ui_mc_reason .media {
 	  float: left;
 	  margin-left: 30px;
-	}
-	/* line 177, ../../app/styles/test.scss */
-	.ui_mc_reason .media img {
-	  width: 231px;
-	  height: 192px;
+	  width: 268px;
 	}
 		
 }
@@ -797,7 +793,7 @@ div.ui_mc_ad_card img {
 	}
 	/* line 150, ../../app/styles/test.scss */
 	.ui_mc_reason .text .reason_row .reason .content {
-	  width: 230px;
+	  width: 240px;
 	  float: left;
 	}
 	/* line 154, ../../app/styles/test.scss */
@@ -823,11 +819,6 @@ div.ui_mc_ad_card img {
 	.ui_mc_reason .media {
 	  float: left;
 	  margin-left: 30px;
+	  width: 268px;
 	}
-	/* line 179, ../../app/styles/test.scss */
-	.ui_mc_reason .media img {
-	  width: 288px;
-	  height: 245px;
-	}
-	
 }	

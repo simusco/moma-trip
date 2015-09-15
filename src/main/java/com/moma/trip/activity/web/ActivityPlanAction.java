@@ -2,10 +2,12 @@ package com.moma.trip.activity.web;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.moma.framework.pagination.Pagination;
 import com.moma.framework.web.BaseSupportAction;
 import com.moma.trip.activity.service.ActivityPlanService;
+import com.moma.trip.activity.service.TagsService;
 import com.moma.trip.common.po.activity.Tags;
 
 public class ActivityPlanAction extends BaseSupportAction {
@@ -16,12 +18,16 @@ public class ActivityPlanAction extends BaseSupportAction {
 	private static final long serialVersionUID = -1803507408872865535L;
 
 	private ActivityPlanService activityPlanService;
+	private TagsService tagsService;
 
 	private List<Tags> tags = null;
 	private Pagination activityPlanList = null;
 	private int currPage;
 
 	public String toQuery() {
+		
+		Map<Tags, List<Tags>> tags = tagsService.getAllTags();
+		this.success(tags);
 		
 		return SUCCESS;
 	}
@@ -89,5 +95,12 @@ public class ActivityPlanAction extends BaseSupportAction {
 		this.currPage = currPage;
 	}
 
+	public TagsService getTagsService() {
+		return tagsService;
+	}
+
+	public void setTagsService(TagsService tagsService) {
+		this.tagsService = tagsService;
+	}
 
 }

@@ -222,7 +222,7 @@
                 </div>
                 <div class="advantage">
                     <p>
-                    	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
+                    	<img src="<%=request.getContextPath()  %>/images/adv_02.png"/>
                         <span>
                         	<b>专业服务</b>
                         	公司所有的服务人员都是有旅游专业背景
@@ -231,7 +231,7 @@
                 </div>
                 <div class="advantage">
                     <p>
-                    	<img src="<%=request.getContextPath()  %>/images/adv_01.png"/>
+                    	<img src="<%=request.getContextPath()  %>/images/adv_03.png"/>
                         <span>
                         	<b>专业服务</b>
                         	请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。

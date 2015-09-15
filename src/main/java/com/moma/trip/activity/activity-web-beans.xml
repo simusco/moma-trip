@@ -11,6 +11,7 @@
     
     <bean id="trip.activityPlanAction" class="com.moma.trip.activity.web.ActivityPlanAction"  scope="prototype">
     	<property name="activityPlanService" ref="trip.activityPlanService"/>
+    	<property name="tagsService" ref="trip.tagsService"/>
     </bean>
     
 </beans>
