@@ -52,6 +52,7 @@ public class ActivityPlanAction extends BaseSupportAction {
 			tagNames = null;
 		
 		pagination.put("tags", tagNames);
+		pagination.put("paramCount", tagNames.size());
 		pagination.setCurrPage(currPage);
 		
 		activityPlanList = activityPlanService.getActivityPlanPageList(pagination);

@@ -18,25 +18,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where mat.activity_plan_id = #{activityPlanId}
 		]]>
 	</select>
-
+	
 	<select id="getPaginationTotal" resultType="java.lang.Long" parameterType="java.util.Map">
 		<![CDATA[
 			select count(1) from mc_activity_plan ap 
 			where EXISTS (
-				select 1 from mc_activity_tags mat
-				where 
-				1=1
+				select 1 from mc_activity_tags tg
+				where tg.activity_plan_id = ap.activity_plan_id
 		]]>
 		
 		<if test="tags != null">
-			and mat.tag_name in 
-			<foreach item="tag" index="index" collection="tags" open="(" separator="," close=")">
-				#{tag}
-			</foreach>
+				and tg.tag_name in
+				<foreach item="tag" index="index" collection="tags" open="(" separator="," close=")">
+					#{tag}
+				</foreach>
+				having count(tg.activity_tags_id) - #{paramCount} = 0
 		</if>
 		
 		<![CDATA[
-				and mat.activity_plan_id = ap.activity_plan_id
 			)
 		]]>
 	</select>
@@ -61,22 +60,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				ap.image_url as imageURL
 			from mc_activity_plan ap 
 			where EXISTS (
-				select 1 from mc_activity_tags mat
-				where 
-				1=1
+				select 1 from mc_activity_tags tg
+				where tg.activity_plan_id = ap.activity_plan_id
 		]]>
 		
 		<if test="tags != null">
-			and mat.tag_name in 
-			<foreach item="tag" index="index" collection="tags" open="(" separator="," close=")">
-				#{tag}
-			</foreach>
+				and tg.tag_name in
+				<foreach item="tag" index="index" collection="tags" open="(" separator="," close=")">
+					#{tag}
+				</foreach>
+				having count(tg.activity_tags_id) - #{paramCount} = 0
 		</if>
 		
 		<![CDATA[
-				and mat.activity_plan_id = ap.activity_plan_id
 			)
-			limit #{from},#{pageSize}
 		]]>
 	</select>
 
