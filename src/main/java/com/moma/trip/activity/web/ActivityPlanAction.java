@@ -8,6 +8,7 @@ import com.moma.framework.pagination.Pagination;
 import com.moma.framework.web.BaseSupportAction;
 import com.moma.trip.activity.service.ActivityPlanService;
 import com.moma.trip.activity.service.TagsService;
+import com.moma.trip.common.po.activity.ActivityPlan;
 import com.moma.trip.common.po.activity.Tags;
 
 public class ActivityPlanAction extends BaseSupportAction {
@@ -23,6 +24,8 @@ public class ActivityPlanAction extends BaseSupportAction {
 	private List<Tags> tags = null;
 	private Pagination activityPlanList = null;
 	private int currPage;
+	private String activityPlanId;
+	private ActivityPlan activityPlan;
 
 	public String toQuery() {
 		
@@ -52,7 +55,7 @@ public class ActivityPlanAction extends BaseSupportAction {
 			tagNames = null;
 		
 		pagination.put("tags", tagNames);
-		pagination.put("paramCount", tagNames.size());
+		pagination.put("paramCount", tagNames == null ? 0 : tagNames.size());
 		pagination.setCurrPage(currPage);
 		
 		activityPlanList = activityPlanService.getActivityPlanPageList(pagination);
@@ -60,6 +63,19 @@ public class ActivityPlanAction extends BaseSupportAction {
 	}
 	
 	public String index(){
+		
+		return SUCCESS;
+	}
+	
+	public String detail(){
+		if(activityPlanId == null){
+			return "index";
+		}
+		
+		activityPlan = activityPlanService.getActivityPlanById(activityPlanId);
+		if(activityPlan == null){
+			return "index";
+		}
 		
 		return SUCCESS;
 	}
@@ -102,6 +118,22 @@ public class ActivityPlanAction extends BaseSupportAction {
 
 	public void setTagsService(TagsService tagsService) {
 		this.tagsService = tagsService;
+	}
+
+	public String getActivityPlanId() {
+		return activityPlanId;
+	}
+
+	public void setActivityPlanId(String activityPlanId) {
+		this.activityPlanId = activityPlanId;
+	}
+
+	public ActivityPlan getActivityPlan() {
+		return activityPlan;
+	}
+
+	public void setActivityPlan(ActivityPlan activityPlan) {
+		this.activityPlan = activityPlan;
 	}
 
 }

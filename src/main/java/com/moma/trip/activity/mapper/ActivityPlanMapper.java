@@ -14,4 +14,6 @@ public interface ActivityPlanMapper {
 	
 	List<Tags> getActivityPlanTags(String activityPlanId);
 
+	ActivityPlan getActivityPlanById(String activityPlanId);
+
 }

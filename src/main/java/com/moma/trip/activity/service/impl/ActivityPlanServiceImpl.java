@@ -75,6 +75,21 @@ public class ActivityPlanServiceImpl implements ActivityPlanService {
 		}
 		return maps;
 	}
+
+	public ActivityPlan getActivityPlanById(String activityPlanId) {
+
+		if(activityPlanId == null || "".equals(activityPlanId))
+			return null;
+		
+		ActivityPlan ap = activityPlanMapper.getActivityPlanById(activityPlanId);
+		if(ap != null){
+			List<Tags> tags = activityPlanMapper.getActivityPlanTags(ap.getActivityPlanId());
+			ap.setTags(getActivityTags(tags));
+		}
+		
+		return ap;
+		
+	}
 	
 }
 

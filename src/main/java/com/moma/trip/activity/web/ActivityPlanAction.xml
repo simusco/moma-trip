@@ -16,5 +16,9 @@
 		<action name="query" method="query" class="trip.activityPlanAction">
 			<result name="success">/views/activity/list.jsp</result>
 		</action>
+		
+		<action name="detail" method="detail" class="trip.activityPlanAction">
+			<result name="success">/views/activity/detail.jsp</result>
+		</action>
 	</package>
 </struts>

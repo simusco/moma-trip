@@ -14,6 +14,7 @@
 
         <global-results>
             <result name="error">/error.jsp</result>
+            <result name="index">/views/activity/index.jsp</result>
         </global-results>
 
         <global-exception-mappings>

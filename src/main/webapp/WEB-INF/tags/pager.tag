@@ -12,9 +12,9 @@
 	request.setAttribute("p_end", end);
 %>
 
-<div class="ui_mc_pagination_bar">
-    <ul class="ui_mc_pagination">
-    	<li>
+<div class="pagination_bar">
+    <ul class="pagination">
+    	<li class="first">
 	    	<%
 				if (curIndex != 1) {
 			%>
@@ -39,7 +39,7 @@
 			</c:choose>
 		</c:forEach>
     
-    	<li>
+    	<li class="last">
     	<%
 			if (curIndex < totalPage) {
 		%>

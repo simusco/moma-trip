@@ -55,7 +55,7 @@ body .content, .topbar, .navbar > ul {
   margin: 0 auto;
 }
 
-.topbar .icon_phone > ul.menu, .topbar .icon_phone > ul.menu li a, .navbar > ul li a, .footer .about, .ad .switch_btn li, .pagination_bar .pagination li, .pagination_bar .pagination li a, .img_scroll_panel .img_card .switch_bar .switch_left_btn a, .img_scroll_panel .img_card .switch_bar .switch_btn li a, .img_scroll_panel .img_card .switch_bar .switch_right_btn a, .img_scroll_panel .detail > .book > span, .img_scroll_panel .detail > .book button, .tags > .title span, .tags .tag_row > span, .tags .tag_row > span > img, .tags .tag_items {
+.topbar .icon_phone > ul.menu, .topbar .icon_phone > ul.menu li a, .navbar > ul li a, .footer .about, .img_scroll_panel .img_card .switch_bar .switch_left_btn a, .img_scroll_panel .img_card .switch_bar .switch_btn li a, .img_scroll_panel .img_card .switch_bar .switch_right_btn a, .img_scroll_panel .detail > .book > span, .img_scroll_panel .detail > .book button, .gobar > ul > li a, .go_detailbar .title span, .go_detail .gosubbar > span {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -63,7 +63,7 @@ body .content, .topbar, .navbar > ul {
   *display: inline;
 }
 
-.topbar .icon_phone > ul.menu li, .navbar > ul li, .footer .about li, .img_scroll_panel .img_card .switch_bar .switch_btn li, .img_scroll_panel .detail .top > .fit > ul > li, .img_scroll_panel .detail .top > .desc > ul > li, .img_scroll_panel .detail .top > .book > ul > li, .recommend > li {
+.topbar .icon_phone > ul.menu li, .navbar > ul li, .footer .about li, .img_scroll_panel .img_card .switch_bar .switch_btn li, .img_scroll_panel .detail .top > .fit > ul > li, .img_scroll_panel .detail .top > .desc > ul > li, .img_scroll_panel .detail .top > .book > ul > li, .gobar > ul > li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
@@ -73,20 +73,20 @@ body .content, .topbar, .navbar > ul {
   padding-left: 0px;
   padding-right: 0px;
 }
-.topbar .icon_phone > ul.menu li:first-child, .navbar > ul li:first-child, .footer .about li:first-child, .img_scroll_panel .img_card .switch_bar .switch_btn li:first-child, .img_scroll_panel .detail .top > .fit > ul > li:first-child, .img_scroll_panel .detail .top > .desc > ul > li:first-child, .img_scroll_panel .detail .top > .book > ul > li:first-child, .recommend > li:first-child, .topbar .icon_phone > ul.menu li.first, .navbar > ul li.first, .footer .about li.first, .img_scroll_panel .img_card .switch_bar .switch_btn li.first, .img_scroll_panel .detail .top > .fit > ul > li.first, .img_scroll_panel .detail .top > .desc > ul > li.first, .img_scroll_panel .detail .top > .book > ul > li.first, .recommend > li.first {
+.topbar .icon_phone > ul.menu li:first-child, .navbar > ul li:first-child, .footer .about li:first-child, .img_scroll_panel .img_card .switch_bar .switch_btn li:first-child, .img_scroll_panel .detail .top > .fit > ul > li:first-child, .img_scroll_panel .detail .top > .desc > ul > li:first-child, .img_scroll_panel .detail .top > .book > ul > li:first-child, .gobar > ul > li:first-child, .topbar .icon_phone > ul.menu li.first, .navbar > ul li.first, .footer .about li.first, .img_scroll_panel .img_card .switch_bar .switch_btn li.first, .img_scroll_panel .detail .top > .fit > ul > li.first, .img_scroll_panel .detail .top > .desc > ul > li.first, .img_scroll_panel .detail .top > .book > ul > li.first, .gobar > ul > li.first {
   padding-left: 0;
 }
-.topbar .icon_phone > ul.menu li:last-child, .navbar > ul li:last-child, .footer .about li:last-child, .img_scroll_panel .img_card .switch_bar .switch_btn li:last-child, .img_scroll_panel .detail .top > .fit > ul > li:last-child, .img_scroll_panel .detail .top > .desc > ul > li:last-child, .img_scroll_panel .detail .top > .book > ul > li:last-child, .recommend > li:last-child {
+.topbar .icon_phone > ul.menu li:last-child, .navbar > ul li:last-child, .footer .about li:last-child, .img_scroll_panel .img_card .switch_bar .switch_btn li:last-child, .img_scroll_panel .detail .top > .fit > ul > li:last-child, .img_scroll_panel .detail .top > .desc > ul > li:last-child, .img_scroll_panel .detail .top > .book > ul > li:last-child, .gobar > ul > li:last-child {
   padding-right: 0;
 }
-.topbar .icon_phone > ul.menu li.last, .navbar > ul li.last, .footer .about li.last, .img_scroll_panel .img_card .switch_bar .switch_btn li.last, .img_scroll_panel .detail .top > .fit > ul > li.last, .img_scroll_panel .detail .top > .desc > ul > li.last, .img_scroll_panel .detail .top > .book > ul > li.last, .recommend > li.last {
+.topbar .icon_phone > ul.menu li.last, .navbar > ul li.last, .footer .about li.last, .img_scroll_panel .img_card .switch_bar .switch_btn li.last, .img_scroll_panel .detail .top > .fit > ul > li.last, .img_scroll_panel .detail .top > .desc > ul > li.last, .img_scroll_panel .detail .top > .book > ul > li.last, .gobar > ul > li.last {
   padding-right: 0;
 }
 
-body .content, .topbar .icon_phone > ul.menu, .navbar, .navbar > ul, .footer .about, .ad .switch_btn, .services li, .img_scroll_panel, .img_scroll_panel .img_card .switch_bar, .img_scroll_panel .img_card .switch_bar .switch_left_btn, .img_scroll_panel .img_card .switch_bar .switch_btn, .img_scroll_panel .img_card .switch_bar .switch_right_btn, .img_scroll_panel .detail, .img_scroll_panel .detail .top > .fit > ul, .img_scroll_panel .detail .top > .desc > ul, .img_scroll_panel .detail .top > .book > ul, .recommend {
+body .content, .topbar .icon_phone > ul.menu, .navbar, .navbar > ul, .services li, .footer .about, .img_scroll_panel, .img_scroll_panel .img_card .switch_bar, .img_scroll_panel .img_card .switch_bar .switch_left_btn, .img_scroll_panel .img_card .switch_bar .switch_btn, .img_scroll_panel .img_card .switch_bar .switch_right_btn, .img_scroll_panel .detail, .img_scroll_panel .detail .top > .fit > ul, .img_scroll_panel .detail .top > .desc > ul, .img_scroll_panel .detail .top > .book > ul, .gobar, .gobar > ul, .gobar > ul > li {
   *zoom: 1;
 }
-body .content:after, .topbar .icon_phone > ul.menu:after, .navbar:after, .navbar > ul:after, .footer .about:after, .ad .switch_btn:after, .services li:after, .img_scroll_panel:after, .img_scroll_panel .img_card .switch_bar:after, .img_scroll_panel .img_card .switch_bar .switch_left_btn:after, .img_scroll_panel .img_card .switch_bar .switch_btn:after, .img_scroll_panel .img_card .switch_bar .switch_right_btn:after, .img_scroll_panel .detail:after, .img_scroll_panel .detail .top > .fit > ul:after, .img_scroll_panel .detail .top > .desc > ul:after, .img_scroll_panel .detail .top > .book > ul:after, .recommend:after {
+body .content:after, .topbar .icon_phone > ul.menu:after, .navbar:after, .navbar > ul:after, .services li:after, .footer .about:after, .img_scroll_panel:after, .img_scroll_panel .img_card .switch_bar:after, .img_scroll_panel .img_card .switch_bar .switch_left_btn:after, .img_scroll_panel .img_card .switch_bar .switch_btn:after, .img_scroll_panel .img_card .switch_bar .switch_right_btn:after, .img_scroll_panel .detail:after, .img_scroll_panel .detail .top > .fit > ul:after, .img_scroll_panel .detail .top > .desc > ul:after, .img_scroll_panel .detail .top > .book > ul:after, .gobar:after, .gobar > ul:after, .gobar > ul > li:after {
   content: "\0020";
   display: block;
   height: 0;
@@ -95,7 +95,7 @@ body .content:after, .topbar .icon_phone > ul.menu:after, .navbar:after, .navbar
   visibility: hidden;
 }
 
-.topbar .logo, .ad .switch_btn, .services li, .services li img, .img_scroll_panel .img_card, .img_scroll_panel .img_card .switch_bar .switch_left_btn, .img_scroll_panel .img_card .switch_bar .switch_btn, .img_scroll_panel .detail {
+.topbar .logo, .services li, .services li img, .img_scroll_panel .img_card, .img_scroll_panel .img_card .switch_bar .switch_left_btn, .img_scroll_panel .img_card .switch_bar .switch_btn, .img_scroll_panel .detail {
   float: left;
   display: inline;
 }
@@ -216,59 +216,6 @@ body .content {
   background-color: #d76a00;
 }
 
-.footer {
-  border-top: 1px dotted #dfdfdf;
-  margin-top: 39px;
-  text-align: center;
-}
-.footer .about {
-  height: 18px;
-  line-height: 18px;
-  vertical-align: middle;
-  margin-top: 32px;
-}
-.footer .about li {
-  border-right: 1px solid #333333;
-}
-.footer .about li a {
-  color: #3e85aa;
-  margin: 0px 7px 0 7px;
-  font-size: 14px;
-}
-.footer .about li.last {
-  border-right: 0px;
-}
-.footer .copyright {
-  height: 37px;
-  text-align: center;
-  display: block;
-  line-height: 37px;
-  vertical-align: middle;
-  background-color: #373636;
-  color: #666666;
-  margin-top: 20px;
-}
-
-.ad {
-  position: relative;
-  width: 100%;
-}
-.ad .switch_btn {
-  z-index: 1;
-  position: absolute;
-  margin-top: 300px;
-}
-.ad .switch_btn li {
-  width: 15px;
-  height: 15px;
-  background-color: #fff;
-  cursor: pointer;
-}
-.ad .ad_img img {
-  width: 100%;
-  height: 334px;
-}
-
 .advertise_img {
   width: 100%;
   margin-top: 90px;
@@ -300,39 +247,37 @@ body .content {
   line-height: 1.5em;
 }
 
-.pagination_bar {
-  width: 100%;
-  margin-top: 57px;
+.footer {
+  border-top: 1px dotted #dfdfdf;
+  margin-top: 39px;
   text-align: center;
 }
-.pagination_bar .pagination {
-  display: inline-block;
-}
-.pagination_bar .pagination li {
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
-.pagination_bar .pagination li a {
-  height: 2.0em;
-  font-size: 1em;
-  line-height: 2.0em;
+.footer .about {
+  height: 18px;
+  line-height: 18px;
   vertical-align: middle;
+  margin-top: 32px;
+}
+.footer .about li {
+  border-right: 1px solid #333333;
+}
+.footer .about li a {
+  color: #3e85aa;
+  margin: 0px 7px 0 7px;
+  font-size: 14px;
+}
+.footer .about li.last {
+  border-right: 0px;
+}
+.footer .copyright {
+  height: 37px;
   text-align: center;
-  padding: 0px 7px;
-}
-.pagination_bar .pagination li.first, .pagination_bar .pagination li.last {
-  -moz-box-shadow: 1px 1px 1px 1px #e5e5e5;
-  -webkit-box-shadow: 1px 1px 1px 1px #e5e5e5;
-  box-shadow: 1px 1px 1px 1px #e5e5e5;
-  background-color: #f2f2f2;
-}
-.pagination_bar .pagination li a:hover {
-  background-color: #f2f2f2;
-}
-.pagination_bar .pagination li[active=true] {
-  background-color: #fb8300;
-  color: #ffffff;
+  display: block;
+  line-height: 37px;
+  vertical-align: middle;
+  background-color: #373636;
+  color: #666666;
+  margin-top: 20px;
 }
 
 .img_scroll_panel {
@@ -453,80 +398,94 @@ body .content {
   vertical-align: middle;
 }
 
-.active_plan_container .img_scroll_panel .detail .top {
-  height: auto;
-}
-.active_plan_container .img_scroll_panel .detail .top .fit, .active_plan_container .img_scroll_panel .detail .top .desc {
-  color: #888888;
-  font-size: 0.875em;
-  line-height: 1.5em;
-}
-
-.recommend {
+.gobar {
   width: 100%;
+  margin-top: 17px;
 }
-.recommend > li {
-  width: 339px;
+.gobar.fixed {
+  position: absolute;
+  float: left;
+  top: 584px;
+  left: 0px;
+  z-index: 1;
+}
+.gobar > ul > li {
+  background: #ffffff url('../images/go_btn.png?1442391992') no-repeat;
+  font-weight: bold;
+  color: #fff;
+}
+.gobar > ul > li a {
+  width: 105px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
 }
-.recommend > li img {
-  width: 329px;
-  height: 100px;
+.gobar > ul > li.active {
+  background: #ffffff url('../images/go_btn_active.png?1442391940') no-repeat;
+  color: #6bc2fa;
 }
-.recommend > li.first {
-  text-align: left;
-}
-.recommend > li.last {
-  text-align: right;
+.gobar > ul > li.last {
+  background: none;
+  height: 39px;
+  width: 30.9375em;
+  border-bottom: 1px solid #6bc2fa;
 }
 
-.tags {
-  margin-top: 25px;
+.go_detailbar {
+  margin-top: 50px;
   width: 100%;
 }
-.tags > .title {
+.go_detailbar .title {
+  background-color: #eaeaea;
+}
+.go_detailbar .title span {
+  width: 105px;
+  height: 40px;
+  background-color: #6bc2fa;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+.go_detailbar > .arrow {
+  height: 10px;
+  background: #fff url('../images/arrow.png?1442397584') no-repeat;
+}
+
+.go_detail {
+  margin-top: 14px;
+}
+.go_detail > .ui-star-1 {
+  margin-left: 100px;
+  list-style: disc inside;
+}
+.go_detail > .ui-star-1 li {
+  font-size: 0.87em;
+  line-height: 2em;
+}
+.go_detail > .ui-list-1 {
+  margin-left: 100px;
+  list-style: decimal inside;
+}
+.go_detail > .ui-list-1 li {
+  font-size: 0.87em;
+  line-height: 2em;
+}
+.go_detail > img {
   width: 100%;
-  background-color: #f6f6f6;
+  height: auto;
 }
-.tags > .title span {
-  padding: 0 10px;
-  background-color: #fb8300;
-  height: 26px;
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 26px;
+.go_detail .gosubbar {
+  height: 40px;
+  width: 100%;
+  font-weight: bold;
+  background-color: #eaeaea;
 }
-.tags .tag_row {
-  border: 1px solid #f1f1f1;
-  border-top: none;
-  padding: 9px 0px 9px 0px;
-}
-.tags .tag_row.first {
-  border-top: 1px solid #f1f1f1;
-}
-.tags .tag_row > span {
-  line-height: 16px;
-  vertical-align: middle;
-  font-size: 14px;
-}
-.tags .tag_row > span > img {
-  margin-left: 18px;
-  margin-right: 15px;
-  width: 24px;
-  height: 16px;
-}
-.tags .tag_items > li {
-  padding: 0px 7px 0px 7px;
-  height: 16px;
-  float: left;
-  line-height: 16px;
-  vertical-align: middle;
-  font-size: 14px;
-}
-.tags .tag_items > li[active=true] {
-  background-color: #fe3000;
-}
-.tags .tag_items > li[active=true] a {
-  color: #ffffff;
-  font-weight: bolder;
+.go_detail .gosubbar > span {
+  width: 105px;
+  margin: 10px 0px 10px 7px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 10px;
+  border-left: 5px solid #6bc2fa;
 }
