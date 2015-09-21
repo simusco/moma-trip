@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moma.trip.image.mapper.ImageMapper">
+
+	<select id="getImageByOwnerId" resultType="com.moma.trip.common.po.image.Image" parameterType="java.lang.String">
+		<![CDATA[
+			select 
+				i.image_id,
+				i.owner_id,
+				i.images_type,
+				i.server,
+				i.path,
+				i.image_name,
+				i.image_desc,
+				i.type,
+				i.sort,
+				i.create_time
+			from mc_images i 
+			where i.owner_id = #{ownerId}
+			order by i.sort
+		]]>
+	</select>
+	
+	<select id="getImageByOwnerIdAndImgType" resultType="com.moma.trip.common.po.image.Image">
+		<![CDATA[
+			select 
+				i.image_id,
+				i.owner_id,
+				i.images_type,
+				i.server,
+				i.path,
+				i.image_name,
+				i.image_desc,
+				i.type,
+				i.sort,
+				i.create_time
+			from mc_images i 
+			where i.owner_id = #{0} and i.type = #{1}
+		]]>
+	</select>
+	
+	<insert id="saveImage" parameterType="com.moma.trip.common.po.image.Image">
+		<![CDATA[
+			INSERT INTO mc_images
+			(
+				image_id,
+				owner_id,
+				images_type,
+				server,
+				path,
+				image_name,
+				image_desc,
+				type,
+				sort,
+				create_time
+			)
+			VALUES 
+			(
+				#{imageId}, 
+				#{ownerId}, 
+				#{imagesType}, 
+				#{server}, 
+				#{path}, 
+				#{imageName}, 
+				#{imageDesc}, 
+				#{type}, 
+				#{sort}, 
+				#{createTime}
+			)
+		]]>
+	</insert>
+	
+</mapper>

@@ -1,4 +1,4 @@
-package com.moma.trip.common;
+package com.moma.framework.utils;
 
 import org.apache.commons.codec.digest.Md5Crypt;
 

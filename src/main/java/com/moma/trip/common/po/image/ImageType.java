@@ -1,4 +1,4 @@
-package com.moma.trip.common.po.activity;
+package com.moma.trip.common.po.image;
 
 import java.io.Serializable;
 import java.util.ArrayList;

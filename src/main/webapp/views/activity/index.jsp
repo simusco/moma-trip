@@ -103,7 +103,12 @@
                         index ++;
                     },3000);
 
-                    $('#blind_btn').css('left', $(document).width() / 2 - $('#blind_btn').width() / 2);
+                    $('#blind_btn').css(
+                    	{
+                    		'left': $(document).width() / 2 - $('#blind_btn').width() / 2,
+                    		'display':'block'
+                    	}
+                    );
                 }
             }
         });
@@ -155,24 +160,48 @@
         <div class="img_list_3">
             <ul class="first_row">
                 <li class="first">
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-1.png"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
                 <li>
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-2.jpg"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
                 <li class="last">
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-3.jpg"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
             </ul>
             <ul>
                 <li class="first">
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-4.jpg"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
                 <li>
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-5.jpg"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
                 <li class="last">
-                    <img src="<%=request.getContextPath()  %>/images/rec001.png" ui-img-change="<%=request.getContextPath()  %>/images/rec001.png,<%=request.getContextPath()  %>/images/rec001-1.png">
+                    <img src="<%=request.getContextPath()  %>/images/rec001-1.png"/>
+                    <div class="rec">
+                        <span class="loction">西冲</span>
+                        <span class="exercise">杨梅花坑骑车</span>
+                    </div>
                 </li>
             </ul>
         </div>

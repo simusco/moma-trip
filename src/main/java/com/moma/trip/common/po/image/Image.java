@@ -1,20 +1,24 @@
-package com.moma.trip.common.po.activity;
+package com.moma.trip.common.po.image;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Image implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -53589735293212834L;
 	private String imageId;
-	private String activityPlanId;
-	private String imagesTypeId;
-	private String imagesTypeName;
+	private String ownerId;
+	private String imagesType;
 	private String server;
 	private String path;
 	private String imageName;
 	private String imageDesc;
 	private String type;
 	private String sort;
-	private String createTime;
+	private Date createTime;
 
 	public String getImageId() {
 		return imageId;
@@ -24,28 +28,20 @@ public class Image implements Serializable {
 		this.imageId = imageId;
 	}
 
-	public String getActivityPlanId() {
-		return activityPlanId;
+	public String getOwnerId() {
+		return ownerId;
 	}
 
-	public void setActivityPlanId(String activityPlanId) {
-		this.activityPlanId = activityPlanId;
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
 	}
 
-	public String getImagesTypeId() {
-		return imagesTypeId;
+	public String getImagesType() {
+		return imagesType;
 	}
 
-	public void setImagesTypeId(String imagesTypeId) {
-		this.imagesTypeId = imagesTypeId;
-	}
-
-	public String getImagesTypeName() {
-		return imagesTypeName;
-	}
-
-	public void setImagesTypeName(String imagesTypeName) {
-		this.imagesTypeName = imagesTypeName;
+	public void setImagesType(String imagesType) {
+		this.imagesType = imagesType;
 	}
 
 	public String getServer() {
@@ -96,11 +92,11 @@ public class Image implements Serializable {
 		this.sort = sort;
 	}
 
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 

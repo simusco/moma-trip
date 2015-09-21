@@ -3,8 +3,8 @@ package com.moma.trip.user.service.impl;
 import java.util.Date;
 import java.util.Random;
 
+import com.moma.framework.utils.Md5;
 import com.moma.framework.utils.UUIDUtils;
-import com.moma.trip.common.Md5;
 import com.moma.trip.common.po.User;
 import com.moma.trip.user.mapper.SignUpMapper;
 import com.moma.trip.user.service.SignUpService;

@@ -51,7 +51,7 @@ a img {
   border: none;
 }
 
-body .content, .topbar, .navbar > ul {
+body .content, .topbar, .navbar > ul, .rec_service > .img_list_3 > ul > li .rec span {
   margin: 0 auto;
 }
 
@@ -83,10 +83,10 @@ body .content, .topbar, .navbar > ul {
   padding-right: 0;
 }
 
-body .content, .topbar .icon_phone > ul.menu, .navbar, .navbar > ul, .services li, .footer .about, .ad .switch_btn, .four_reason .content > .text, .four_reason .content > .text ul, .four_reason .content > .text ul li, .four_reason .content > .media {
+body .content, .topbar .icon_phone > ul.menu, .navbar, .navbar > ul, .services li, .footer .about, .ad .switch_btn, .rec_service > .img_list_3 > ul > li .rec, .rec_service > .img_list_3 > ul > li .rec span, .four_reason .content > .text, .four_reason .content > .text ul, .four_reason .content > .text ul li, .four_reason .content > .media {
   *zoom: 1;
 }
-body .content:after, .topbar .icon_phone > ul.menu:after, .navbar:after, .navbar > ul:after, .services li:after, .footer .about:after, .ad .switch_btn:after, .four_reason .content > .text:after, .four_reason .content > .text ul:after, .four_reason .content > .text ul li:after, .four_reason .content > .media:after {
+body .content:after, .topbar .icon_phone > ul.menu:after, .navbar:after, .navbar > ul:after, .services li:after, .footer .about:after, .ad .switch_btn:after, .rec_service > .img_list_3 > ul > li .rec:after, .rec_service > .img_list_3 > ul > li .rec span:after, .four_reason .content > .text:after, .four_reason .content > .text ul:after, .four_reason .content > .text ul li:after, .four_reason .content > .media:after {
   content: "\0020";
   display: block;
   height: 0;
@@ -148,7 +148,7 @@ body .content {
 .topbar .icon_phone {
   height: 100%;
   width: 20.3em;
-  background: #fff url('../images/bg_contact.png?1442377385') no-repeat fixed right top;
+  background: #fff url('../images/bg_contact.png?1442377385') no-repeat top right;
   -moz-background-size: 10.6875em, 4.1875em;
   -o-background-size: 10.6875em, 4.1875em;
   -webkit-background-size: 10.6875em, 4.1875em;
@@ -275,6 +275,7 @@ body .content {
   z-index: 1;
   position: absolute;
   margin-top: 300px;
+  display: none;
 }
 .ad .switch_btn li {
   width: 15px;
@@ -317,11 +318,48 @@ body .content {
   font-size: 12px;
   padding: 0px 8px;
 }
-.rec_service > .img_list_3 ul li img {
+.rec_service > .img_list_3 > ul > li {
+  position: relative;
+}
+.rec_service > .img_list_3 > ul > li .rec {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  height: 160px;
+  width: 160px;
+  background-color: #000;
+  margin: -80px 0px 0px -80px;
+}
+.rec_service > .img_list_3 > ul > li .rec span {
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  width: 140px;
+}
+.rec_service > .img_list_3 > ul > li .rec span.loction {
+  font-size: 24px;
+  line-height: 36px;
+  border-bottom: 2px solid #ccc;
+  padding-top: 46px;
+}
+.rec_service > .img_list_3 > ul > li .rec span.exercise {
+  font-size: 18px;
+  line-height: 36px;
+}
+.rec_service > .img_list_3 > ul > li .rec:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.rec_service > .img_list_3 > ul > li img {
   width: 315px;
   height: 233px;
 }
-.rec_service > .img_list_4 ul li img {
+.rec_service > .img_list_4 > ul > li img {
   width: 227px;
   height: 202px;
 }

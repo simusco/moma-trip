@@ -57,7 +57,7 @@
 	
 	    function gotoPage(pageIndex){
 	    	displayActivityPlan({'currPage':pageIndex});
-	    	$(window).scrollTop(360);
+	    	$(window).scrollTop(0);
 	    }
     
         $.extend({
@@ -194,6 +194,7 @@
     </ul>
 </div>
 
+<!-- 
 <div class="ad">
     <ul class="switch_btn" id="blind_btn">
         <li ad-img-url='<%=request.getContextPath()  %>/images/ad_01.png'></li>
@@ -204,6 +205,7 @@
         <li><img src="<%=request.getContextPath()  %>/images/ad_03.png" id="screen"></li>
     </ul>
 </div>
+ -->
 
 <div class="content">
 

@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.moma.trip.common.po.image.Image;
+
 public class ActivityPlan implements Serializable {
 
 	/**
@@ -30,9 +32,9 @@ public class ActivityPlan implements Serializable {
 	private Integer sort;
 	private String imageURL;
 
-	private List<ImageType> imageTypeList = new ArrayList<ImageType>();
 	private List<ActivityTag> activityTagList = new ArrayList<ActivityTag>();
 	private Map<Tags, List<Tags>> tags = new HashMap<Tags, List<Tags>>();
+	private List<Image> imageList = new ArrayList<Image>();
 
 	public String getActivityPlanId() {
 		return activityPlanId;
@@ -154,14 +156,6 @@ public class ActivityPlan implements Serializable {
 		this.imageURL = imageURL;
 	}
 
-	public List<ImageType> getImageTypeList() {
-		return imageTypeList;
-	}
-
-	public void setImageTypeList(List<ImageType> imageTypeList) {
-		this.imageTypeList = imageTypeList;
-	}
-
 	public List<ActivityTag> getActivityTagList() {
 		return activityTagList;
 	}
@@ -176,6 +170,14 @@ public class ActivityPlan implements Serializable {
 
 	public void setTags(Map<Tags, List<Tags>> tags) {
 		this.tags = tags;
+	}
+
+	public List<Image> getImageList() {
+		return imageList;
+	}
+
+	public void setImageList(List<Image> imageList) {
+		this.imageList = imageList;
 	}
 
 }

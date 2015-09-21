@@ -22,7 +22,7 @@
                    gobar.css('top', '');
                }else{
                    $('#go-bar').addClass('fixed')
-                   gobar.css('top', scrollTop - 140);
+                   //gobar.css('top', scrollTop - 140);
                }
            });
 
@@ -55,6 +55,9 @@
                    $(this).addClass("active");
                });
            });
+           
+       	   var firstLi = $($('.switch_btn > li').get(0));
+   		   firstLi.trigger('click');
        });
 
        function setUnActive(){
@@ -108,17 +111,20 @@
     <div class="img_scroll_panel">
         <div class="img_card">
             <div class="screen">
-                <img src="<%=request.getContextPath()  %>/images/screen_001.jpg" id="screen"/>
+            	<img src="<%=request.getContextPath()  %>${image.path}" id="screen"/>
             </div>
             <div class="switch_bar">
                 <div class="switch_left_btn"><a href="javascript:fn();" id="switch-left-btn"></a></div>
                 <ul class="switch_btn">
-                    <li active="true" screen-url="<%=request.getContextPath()  %>/images/screen_001.jpg">
-                        <a href="javascript:fn();"><img src="<%=request.getContextPath()  %>/images/screen_001.jpg" class="first active"/></a>
-                    </li>
-                    <li screen-url="<%=request.getContextPath()  %>/images/screen_002.jpg"><a href="javascript:fn();"><img src="<%=request.getContextPath()  %>/images/screen_002.jpg"/></a></li>
-                    <li screen-url="<%=request.getContextPath()  %>/images/screen_001.jpg"><a href="javascript:fn();"><img src="<%=request.getContextPath()  %>/images/screen_001.jpg"/></a></li>
-                    <li screen-url="<%=request.getContextPath()  %>/images/screen_001.jpg"><a href="javascript:fn();"><img src="<%=request.getContextPath()  %>/images/screen_001.jpg"/></a></li>
+                	<c:set value="0" var="index"/>
+                	<c:forEach items="${activityPlan.imageList }" var="image" varStatus="vs">
+                		<c:if test="${image.type == 'switch' }">
+	                		<li screen-url="<%=request.getContextPath()  %>${image.path}">
+		                        <a href="javascript:fn();"><img src="<%=request.getContextPath()  %>${image.path}" class="${index == 0 ? "first" : "" }"/></a>
+		                    </li>
+		                    <c:set value="${index + 1 }" var="index"/>
+	                    </c:if>
+                	</c:forEach>
                 </ul>
                 <div class="switch_right_btn"><a href="javascript:fn();" id="switch-right-btn"></a></div>
             </div>
@@ -180,8 +186,8 @@
     <div class="gobar" id="go-bar">
         <ul>
             <li class="active"><a href="#special_anchor">产品特色</a></li>
-            <li><a href="javascript:fn();">具体行程</a></li>
-            <li><a href="javascript:fn();">注意事项</a></li>
+            <li><a href="#route_anchor">具体行程</a></li>
+            <li><a href="#notice_anchor">注意事项</a></li>
             <li><a href="#expenditure_anchor">费用说明</a></li>
             <li><a href="#remark_anchor">备注</a></li>
             <li class="last"></li>
@@ -191,6 +197,36 @@
     <div class="go_detailbar"  name="special_anchor"  id="special_anchor">
         <div class="title">
             <span>产品特色</span>
+        </div>
+        <div class="arrow"></div>
+    </div>
+    <div class="go_detail">
+        <ul class="ui-star-1">
+            <li>产品特色就是该产品显著区别于其他产品的风格.</li>
+            <li>是由产品赖以产生和发展的特定的具体的环境因素所决定的.</li>
+            <li>产品特色定位是指企业为突出产品的某个特色便其在消费者心目中形成突出印象.</li>
+            <li>某个特色便其在消费者心目中形成突出印象</li>
+            <li>全国人大常委会副委员长陈竺14日在人民大会堂会见了到访的法国戴.</li>
+        </ul>
+    </div>
+    
+    <div class="go_detailbar"  name="route_anchor"  id="route_anchor">
+        <div class="title">
+            <span>具体行程</span>
+        </div>
+        <div class="arrow"></div>
+    </div>
+    <div class="go_detail">
+    	<c:forEach items="${activityPlan.imageList }" var="image" varStatus="vs">
+       		<c:if test="${image.type == 'route' }">
+       			<img alt="具体行程" src="<%=request.getContextPath()  %>${image.path}"/>
+            </c:if>
+       	</c:forEach>
+    </div>
+    
+    <div class="go_detailbar"  name="notice_anchor"  id="notice_anchor">
+        <div class="title">
+            <span>注意事项</span>
         </div>
         <div class="arrow"></div>
     </div>
